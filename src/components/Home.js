@@ -36,7 +36,7 @@ function Home() {
     
 return(<>
 <main>
-  
+  <h1>Your Posted Topics</h1>
 {topics && topics.map(topic => <Topics key={topic.id} message={topic}  />)}
 </main>
 </>

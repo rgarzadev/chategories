@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 
 import HomeIcon from '@material-ui/icons/Home';
 import HelpIcon from '@material-ui/icons/Help';
+import ForumIcon from '@material-ui/icons/Forum';
 
 // {/* <Button color="inherit">Login</Button> */}
 
@@ -40,7 +41,7 @@ function Nav() {
                 {/* <Link style={ navStyle } href="https://youtube.com" target="_blank"> */}
                 <Link to={{ pathname: "/chategories" }} style={ navStyle }>
                 <IconButton edge="start" color="inherit" aria-label="menu">
-                    <HelpIcon fontSize="large"/>
+                    <ForumIcon fontSize="large"/>
                 </IconButton>
                 </Link>
 
