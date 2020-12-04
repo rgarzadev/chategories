@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import firebase from "firebase/app"
 import 'firebase/firestore';
 import 'firebase/auth';
 import { useCollectionData } from 'react-firebase-hooks/firestore';
 import {Link} from 'react-router-dom';
-import {useParams} from 'react-router-dom';
+import {  Route } from "react-router-dom";
 try {
     firebase.initializeApp({
       apiKey: "AIzaSyALKfxH4ZltFk_E66Z6-a4whQnVX1uCljo",
@@ -21,45 +21,34 @@ try {
       if (!/already exists/.test(err.message)) {
       console.error('Firebase initialization error raised', err.stack)
       }}
+      // const auth = firebase.auth();
       const auth = firebase.auth();
       const firestore = firebase.firestore();
-function Topic() {
-  const { uid} = auth.currentUser;
-    let {id} = useParams();
-    console.log(id);
+function Home() {
+  
+    // const dummy = useRef();
+    const{uid} = auth.currentUser;
     const topicsRef = firestore.collection('topics');
-    const query = topicsRef.where('chategory', '==', id).limit(25);
+    const query = topicsRef.where('author', '==', uid).limit(25);
     const [topics] = useCollectionData(query, { idField: 'id' });
-    const [formValue, setFormValue] = useState('');
-    const createTopic = async (e) => {
-        e.preventDefault();
-        await topicsRef.add({
-          title: formValue,
-          chategory: id,
-          crat: firebase.firestore.FieldValue.serverTimestamp(),
-          id: formValue,
-          author: uid
-        })
-        setFormValue('');
-        // dummy.current.scrollIntoView({ behavior: 'smooth' });
-      }
+    console.log(topics)
+   
+    
 return(<>
-<form onSubmit={createTopic}>
-<input value={formValue} onChange={(e) => setFormValue(e.target.value)} placeholder="What do you want to chat about?" />
-<button type="submit" disabled={!formValue}>🕊️</button>
-</form>
 <main>
+  
 {topics && topics.map(topic => <Topics key={topic.id} message={topic}  />)}
 </main>
 </>
 )
 }
 function Topics(props) {
-    const { title, id } = props.message;
+ 
+    const { title } = props.message;
 return (<>
       <div>
-      <Link to={'/chat/' + id}>{title}</Link>
+      <Link to={'/chat/' + title}>{title}</Link>
      </div>
     </>)
   }
-export default Topic;
+export default Home

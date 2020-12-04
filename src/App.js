@@ -4,7 +4,7 @@ import firebase from "firebase/app"
 import 'firebase/firestore';
 import 'firebase/auth';
 import Nav from './components/Nav';
-// import Home from './components/Home';
+import Home from './components/Home';
 import Footer from "./components/Footer";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import ChatRoom from './components/Chatrooms'
@@ -37,7 +37,8 @@ function App() {
       <SignOut />
       <Nav />
       <Switch>
-      {user ? <Route path="/" component={Chategory} exact /> : <Route path="/" component={SignIn} exact />}
+      {user ? <Route path="/" component={Home} exact /> : <Route path="/" component={SignIn} exact />}
+      <Route path="/chategories" component={Chategory} />
       <Route path="/chat/:id" component={ChatRoom} />
       <Route path="/topic/:id" component={Topic} />
       </Switch>

@@ -38,7 +38,7 @@ function Nav() {
                 </Typography>
 
                 {/* <Link style={ navStyle } href="https://youtube.com" target="_blank"> */}
-                <Link to={{ pathname: "https://youtube.com" }} target="_blank" style={ navStyle }>
+                <Link to={{ pathname: "/chategories" }} style={ navStyle }>
                 <IconButton edge="start" color="inherit" aria-label="menu">
                     <HelpIcon fontSize="large"/>
                 </IconButton>
