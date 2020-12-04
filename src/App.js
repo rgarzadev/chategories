@@ -38,9 +38,9 @@ function App() {
       <Nav />
       <Switch>
       {user ? <Route path="/" component={Home} exact /> : <Route path="/" component={SignIn} exact />}
-      <Route path="/chategories" component={Chategory} />
-      <Route path="/chat/:id" component={ChatRoom} />
-      <Route path="/topic/:id" component={Topic} />
+      {user ? <Route path="/chategories" component={Chategory} />: <Route path="/chategories" component={SignIn} exact />}
+      {user ? <Route path="/chat/:id" component={ChatRoom} />: <Route path="/chat/:id" component={SignIn} exact />}
+      {user ? <Route path="/topic/:id" component={Topic} />: <Route path="/topic/:id" component={SignIn} exact />}
       </Switch>
       {/* {user ? <Footer /> : null} */}
       </BrowserRouter>
