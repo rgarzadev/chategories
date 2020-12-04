@@ -4,13 +4,13 @@ import firebase from "firebase/app"
 import 'firebase/firestore';
 import 'firebase/auth';
 import Nav from './components/Nav';
-import Home from './components/Home';
+// import Home from './components/Home';
 import Footer from "./components/Footer";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import ChatRoom from './components/Chatrooms'
+import Topic from './components/Topic'
 import { useAuthState } from 'react-firebase-hooks/auth';
-
-
+import Chategory from './components/Chategory';
 try {
 firebase.initializeApp({
   apiKey: "AIzaSyALKfxH4ZltFk_E66Z6-a4whQnVX1uCljo",
@@ -27,50 +27,39 @@ firebase.initializeApp({
 if (!/already exists/.test(err.message)) {
 console.error('Firebase initialization error raised', err.stack)
 }}
-
 const auth = firebase.auth();
 const firestore = firebase.firestore();
-
 function App() {
   const [user] = useAuthState(auth);
-  
   return (
     <div className="App">
       <BrowserRouter>
       <SignOut />
       <Nav />
       <Switch>
-      {user ? <Route path="/" component={Home} exact /> : <Route path="/" component={SignIn} exact />}
+      {user ? <Route path="/" component={Chategory} exact /> : <Route path="/" component={SignIn} exact />}
       <Route path="/chat/:id" component={ChatRoom} />
+      <Route path="/topic/:id" component={Topic} />
       </Switch>
       {/* {user ? <Footer /> : null} */}
-     
       </BrowserRouter>
     </div>
   );
 }
 function SignIn() {
-
   const signInWithGoogle = () => {
     const provider = new firebase.auth.GoogleAuthProvider();
     auth.signInWithPopup(provider);
   }
-
   return (
     <>
       <button className="sign-in" onClick={signInWithGoogle}>Sign in with Google</button>
-     
     </>
   )
-
 }
-
 function SignOut() {
   return auth.currentUser && (
     <button className="sign-out" onClick={() => auth.signOut()}>Sign Out</button>
   )
 }
-
-
-
 export default App;
