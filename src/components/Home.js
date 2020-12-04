@@ -36,7 +36,8 @@ function Home() {
     
 return(<>
 <main>
-  <h1>Your Posted Topics</h1>
+  
+{topics ? <h1>Your Posted Topics</h1> : <h1>Click the Chat Icon to Start a Topic</h1>}
 {topics && topics.map(topic => <Topics key={topic.id} message={topic}  />)}
 </main>
 </>

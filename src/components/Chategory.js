@@ -40,10 +40,11 @@ function Chategory() {
       }
 return(<>
 <form onSubmit={createChategory}>
-<input value={formValue} onChange={(e) => setFormValue(e.target.value)} placeholder="Chategory Title" />
+<input value={formValue} onChange={(e) => setFormValue(e.target.value)} placeholder="Add a Chategory!!" />
 <button type="submit" disabled={!formValue}>🕊️</button>
 </form>
 <main>
+  <h1>Dis be all the Chategories we got</h1>
 {chategories && chategories.map(chategory => <Chategories key={chategory.id} message={chategory}  />)}
 </main>
 </>
