@@ -1,66 +1,59 @@
-import React, { useRef, useState } from 'react';
-import './App.css';
+import React from 'react';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { useAuthState } from 'react-firebase-hooks/auth';
+
+import Nav from "./components/Nav/Nav";
+import NoMatch from "./pages/NoMatch/NoMatch";
+import Home from "./pages/Home/Home";
+import Search from "./pages/Search/Search";
+import Settings from "./pages/Settings/Settings";
+import MyChats from "./pages/MyChats/MyChats";
+import Chat from "./pages/Chat/Chat";
+import SignIn from "./pages/SignIn/SignIn"
+import Footer from "./components/Footer/Footer";
+import otherUserProfile from "./pages/OtherUserProfile/otherUserProfile"
+import SelectedChategory from "./pages/SelectedChategory/SelectedChategory"
+
 import firebase from "firebase/app"
 import 'firebase/firestore';
 import 'firebase/auth';
-import Nav from './components/Nav';
-import Home from './components/Home';
-import Footer from "./components/Footer";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
-import ChatRoom from './components/Chatrooms'
-import Topic from './components/Topic'
-import { useAuthState } from 'react-firebase-hooks/auth';
-import Chategory from './components/Chategory';
-try {
-firebase.initializeApp({
-  apiKey: "AIzaSyALKfxH4ZltFk_E66Z6-a4whQnVX1uCljo",
-  authDomain: "chategories-57274.firebaseapp.com",
-  projectId: "chategories-57274",
-  storageBucket: "chategories-57274.appspot.com",
-  messagingSenderId: "1090971846029",
-  appId: "1:1090971846029:web:e8d48401de492012e4a9c4",
-  measurementId: "G-6E1W11KY7Y"
-})
-} catch (err) {
-// we skip the "already exists" message which is
-// not an actual error when we're hot-reloading
-if (!/already exists/.test(err.message)) {
-console.error('Firebase initialization error raised', err.stack)
-}}
+
+
+
+
+// import { ThemeProvider } from '@material-ui/core/styles'
+// import CssBaseline from '@material-ui/core/CssBaseline'
+// import theme from './theme'
+import './App.css';
 const auth = firebase.auth();
-const firestore = firebase.firestore();
+
 function App() {
   const [user] = useAuthState(auth);
+
   return (
-    <div className="App">
-      <BrowserRouter>
-      <SignOut />
-      <Nav />
-      <Switch>
-      {user ? <Route path="/" component={Home} exact /> : <Route path="/" component={SignIn} exact />}
-      {user ? <Route path="/chategories" component={Chategory} />: <Route path="/chategories" component={SignIn} exact />}
-      {user ? <Route path="/chat/:id" component={ChatRoom} />: <Route path="/chat/:id" component={SignIn} exact />}
-      {user ? <Route path="/topic/:id" component={Topic} />: <Route path="/topic/:id" component={SignIn} exact />}
-      </Switch>
-      {/* {user ? <Footer /> : null} */}
-      </BrowserRouter>
-    </div>
+    // <ThemeProvider theme={theme}>
+      // <CssBaseline />
+        <Router>
+          <Nav/>
+          <Switch>
+
+            {user ? <Route path="/" exact component={Home}/> : 
+            <Route path="/" component={SignIn} exact />}
+            <Route exact path="/search" component={Search}/>
+            <Route exact path="/mychats" component={MyChats}/>
+            <Route exact path="/chat/:id" component={Chat}/>
+            <Route exact path="/settings" component={Settings}/>
+            <Route exact path="/otheruserprofile" component={otherUserProfile}/>
+            <Route exact path="/topic/:id" component={SelectedChategory}/>
+            <Route path="/*" component={NoMatch}/>
+
+          </Switch>
+
+          {user ? <Footer/> : null}
+
+        </Router>
+    // </ThemeProvider>
   );
 }
-function SignIn() {
-  const signInWithGoogle = () => {
-    const provider = new firebase.auth.GoogleAuthProvider();
-    auth.signInWithPopup(provider);
-  }
-  return (
-    <>
-      <button className="sign-in" onClick={signInWithGoogle}>Sign in with Google</button>
-    </>
-  )
-}
-function SignOut() {
-  return auth.currentUser && (
-    <button className="sign-out" onClick={() => auth.signOut()}>Sign Out</button>
-  )
-}
+
 export default App;

@@ -1,0 +1,12 @@
+.ContentArea {
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+  
+  .OtherUserMyPosts {
+    border: solid black;
+    min-height: 325px;
+    margin-bottom: 60px;
+    background-color: rgb(158, 147, 147);
+  }
+  

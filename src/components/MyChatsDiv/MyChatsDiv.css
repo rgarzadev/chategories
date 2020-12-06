@@ -1,0 +1,11 @@
+.ContentArea {
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+.MyChatsDiv {
+    border: solid black;
+    min-height: 650px;
+    margin-bottom: 70px;
+    background-color: purple;
+}

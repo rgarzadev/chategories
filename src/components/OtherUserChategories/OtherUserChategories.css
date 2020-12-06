@@ -1,0 +1,11 @@
+.ContentArea {
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+.OtherUserChategories {
+    border: solid black;
+    min-height: 550px;
+    margin-bottom: 60px;
+    background-color: rgb(153, 139, 139);
+}

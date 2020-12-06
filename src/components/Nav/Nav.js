@@ -1,13 +1,16 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { AppBar, Toolbar, IconButton, Typography } from '@material-ui/core';
+import { AppBar, Toolbar, IconButton, Typography, Button } from '@material-ui/core';
 import { Link } from 'react-router-dom';
+import 'firebase/auth';
+import { useHistory } from "react-router-dom";
 
-import HomeIcon from '@material-ui/icons/Home';
-import HelpIcon from '@material-ui/icons/Help';
-import ForumIcon from '@material-ui/icons/Forum';
+import HighlightOffIcon from '@material-ui/icons/HighlightOff';
+import ArrowBackIcon from '@material-ui/icons/ArrowBack';
+import firebase from "../../firebase"
+{/* <Button color="inherit">Login</Button> */}
 
-// {/* <Button color="inherit">Login</Button> */}
+const auth = firebase.auth();
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -20,17 +23,17 @@ const useStyles = makeStyles((theme) => ({
 
 function Nav() {
     const classes = useStyles();
-
+    let history = useHistory();
     const navStyle = {
         color: 'white'
     };
-
+   
     return (
         <AppBar position="static">
             <Toolbar>
                 <Link style={ navStyle } to="/">
                 <IconButton edge="start" color="inherit" aria-label="menu">
-                    <HomeIcon fontSize="large"/>
+                    <ArrowBackIcon onClick={() => history.goBack()} fontSize="large"/>
                 </IconButton>
                 </Link>
 
@@ -39,9 +42,12 @@ function Nav() {
                 </Typography>
 
                 {/* <Link style={ navStyle } href="https://youtube.com" target="_blank"> */}
-                <Link to={{ pathname: "/chategories" }} style={ navStyle }>
+                <Link to={{ pathname: "/" }} target="_blank" style={ navStyle }>
                 <IconButton edge="start" color="inherit" aria-label="menu">
-                    <ForumIcon fontSize="large"/>
+                    <HighlightOffIcon onClick={() => auth.signOut()} fontSize="large"/>
+                    <Typography variant="button" display="block" gutterBottom>
+              Log Out
+            </Typography>
                 </IconButton>
                 </Link>
 

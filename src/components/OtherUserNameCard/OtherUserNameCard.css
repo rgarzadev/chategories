@@ -1,0 +1,38 @@
+.OtherUserNameCard {
+    border: solid black;
+    padding-left: 1% !important;
+    padding-right: 1% !important;
+}
+.ContentArea {
+    padding-left: 3% !important;
+    padding-right: 3% !important;
+}
+
+.OtherUserImage {
+    text-align: center;
+    align-items: center;
+    padding-left: 1% !important;
+    padding-right: 1% !important;
+  }
+
+  .OtherUserNamePlate {
+    text-align: center;
+    align-items: center;
+    padding-left: 1% !important;
+    padding-right: 1% !important;
+  }
+
+  .ChatIcon {
+    text-align: center;
+    align-items: center;
+    padding-left: 1% !important;
+    padding-right: 1% !important;
+  }
+
+  .PageTitle {
+      margin-top: 2%;
+  }
+
+  .AboutRow {
+      margin-top: 2%;
+  }

@@ -1,0 +1,11 @@
+.ContentArea {
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+.MyPosts {
+    border: solid black;
+    min-height: 550px;
+    margin-bottom: 60px;
+    background-color: white;
+}

@@ -1,0 +1,18 @@
+.ContentArea {
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+  
+  .bioContainer {
+    border: solid black;
+    min-height: 125px;
+    margin-bottom: 60px;
+    background-color: rgb(158, 147, 147);
+  }
+  
+  .MyChategories {
+    border: solid black;
+    min-height: 550px;
+    margin-bottom: 60px;
+    background-color: rgb(158, 147, 147);
+  }

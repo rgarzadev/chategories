@@ -1,0 +1,13 @@
+h6 {
+    display: inline;
+}
+
+.AlignCenter {
+    text-align: center !important;
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+}
+  
+.NoPadding {
+    padding: 0px !important;
+}

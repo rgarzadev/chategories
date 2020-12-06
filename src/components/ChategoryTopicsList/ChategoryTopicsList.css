@@ -1,0 +1,11 @@
+.ContentArea {
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+.ChategoryTopicsList {
+    border: solid black;
+    min-height: 400px;
+    margin-bottom: 60px;
+    background-color: pink;
+}

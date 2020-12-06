@@ -9,6 +9,7 @@ import IconButton from '@material-ui/core/IconButton';
 import SearchIcon from '@material-ui/icons/Search';
 import ForumIcon from '@material-ui/icons/Forum';
 import PersonIcon from '@material-ui/icons/Person';
+import HomeIcon from '@material-ui/icons/Home';
 
 const useStyles = makeStyles((theme) => ({
   appBar: {
@@ -32,15 +33,15 @@ function Footer() {
       <AppBar position="fixed" color="primary" className={classes.appBar}>
         <Toolbar>
           
-          <Link style={ navStyle } to='/search' color="inherit">
+          <Link style={ navStyle } to='/' color="inherit">
           <IconButton edge="start" color="inherit">
-            <SearchIcon fontSize="large"/>
+          <HomeIcon fontSize="large"/>
           </IconButton>     
           </Link>
 
           <div className={classes.grow}/>
 
-          <Link style={ navStyle } to='/chat'>
+          <Link style={ navStyle } to='/search'>
           <IconButton color="inherit" className={classes.centerButton}>
             <ForumIcon fontSize="large"/>
           </IconButton>

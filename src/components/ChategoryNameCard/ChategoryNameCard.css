@@ -1,0 +1,23 @@
+.ChategoryNameCard {
+    border: solid black;
+    padding-left: 1% !important;
+    padding-right: 1% !important;
+}
+.ContentArea {
+    padding-left: 3% !important;
+    padding-right: 3% !important;
+}
+
+.ChategoryImage {
+    text-align: center;
+    align-items: center;
+    padding-left: 1% !important;
+    padding-right: 1% !important;
+}
+
+.ChategoryNamePlate {
+    text-align: left;
+    align-items: center;
+    padding-left: 1% !important;
+    padding-right: 1% !important;
+}

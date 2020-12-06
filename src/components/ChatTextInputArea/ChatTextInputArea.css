@@ -1,0 +1,10 @@
+.ContentArea {
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+.ChatTextInputArea {
+    border: solid black;
+    min-height: 80px;
+    margin-bottom: 6px;
+}
