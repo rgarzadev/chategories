@@ -1,4 +1,5 @@
 import React, { useRef, useState } from 'react';
+import Link from '@material-ui/core/Link';
 import firebase from "../../firebase"
 import {useParams} from 'react-router-dom'
 import { useCollectionData } from 'react-firebase-hooks/firestore';
@@ -16,12 +17,13 @@ function Chat() {
     const [formValue, setFormValue] = useState('');
     const sendMessage = async (e) => {
       e.preventDefault();
-      const { uid, photoURL } = auth.currentUser;
+      const { uid, photoURL, displayName } = auth.currentUser;
       await messagesRef.add({
         text: formValue,
         createdAt: firebase.firestore.FieldValue.serverTimestamp(),
         uid,
-        photoURL
+        photoURL, 
+        displayName
       })
       setFormValue('');
       dummy.current.scrollIntoView({ behavior: 'smooth' });
@@ -38,10 +40,12 @@ function Chat() {
     </>)
   }
   function ChatMessage(props) {
-    const { text, uid, photoURL } = props.message;
+    const { text, uid, photoURL, displayName} = props.message;
     const messageClass = uid === auth.currentUser.uid ? 'sent' : 'received';
+    console.log(uid)
     return (<>
       <div className={`message ${messageClass}`}>
+        <Link to={'/chat/' + uid}>{displayName}</Link>
         <img src={photoURL || 'https://api.adorable.io/avatars/23/abott@adorable.png'} />
         <p>{text}</p>
       </div>

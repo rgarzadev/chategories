@@ -1,7 +1,8 @@
 import React from 'react';
 import firebase from "../../firebase"
 import 'firebase/auth';
-import { Container, makeStyles } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core';
+import Container from '@material-ui/core/Container';
 import "./MyUserNameCard.css";
 const auth = firebase.auth();
 
