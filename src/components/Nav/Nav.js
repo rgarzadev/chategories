@@ -34,7 +34,7 @@ function Nav() {
         
             <AppBar position="static">
                 <Toolbar>
-                <div className='navbar'>
+                    
                     <Link style={ navStyle } to="/">
                     <IconButton edge="start" color="inherit" aria-label="menu">
                         <ArrowBackIcon onClick={() => history.goBack()} fontSize="large"/>
@@ -54,7 +54,7 @@ function Nav() {
                 </Typography>
                     </IconButton>
                     </Link>
-                </div>
+
                 </Toolbar>
         </AppBar>
         

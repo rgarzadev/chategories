@@ -7,8 +7,9 @@ import CardActionArea from '@material-ui/core/CardActionArea';
 import CardMedia from '@material-ui/core/CardMedia';
 import SetUsername from '../../components/SetUserName/SetUserName';
 import firebase from "firebase"
-import "./Settings.css";
 import MyChategories from '../../components/MyChategories/MyChategories';
+import "./Settings.css";
+
 
 const auth = firebase.auth();
 const firestore = firebase.firestore();
@@ -36,7 +37,7 @@ function Settings() {
                 <h5 className ='SettingsProfile' > Edit Profile </h5>
                 <br></br>
                 <Container className ='SettingsProfile'>
-                    <Card className={classes.root}>
+                    <Card className={` ProfileCard ${classes.root}`}>
                         <CardActionArea>
                             <CardMedia
                                 component='img'
