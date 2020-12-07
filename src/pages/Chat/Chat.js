@@ -9,15 +9,27 @@ const auth = firebase.auth();
 const firestore = firebase.firestore();
 function Chat() {
     let {id} = useParams();
-    console.log(id)
     const dummy = useRef();
     const messagesRef = firestore.collection(id);
     const query = messagesRef.orderBy('createdAt').limit(25);
     const [messages] = useCollectionData(query, { idField: 'id' });
     const [formValue, setFormValue] = useState('');
+
+
+    const usersRef = firestore.collection('users');
+    const {uid} = auth.currentUser; 
+    const query2 = usersRef.where('uid', '==', uid).limit(1)
+
+    const [users] = useCollectionData(query2, { idField: 'id' });
+
+
     const sendMessage = async (e) => {
       e.preventDefault();
-      const { uid, photoURL, displayName } = auth.currentUser;
+      const { uid, photoURL } = auth.currentUser;
+      const displayName = users[0].displayName
+      console.log(displayName)
+
+      // const {displayName} = [users.[0]]
       await messagesRef.add({
         text: formValue,
         createdAt: firebase.firestore.FieldValue.serverTimestamp(),
@@ -36,17 +48,17 @@ function Chat() {
       <form onSubmit={sendMessage}>
         <input value={formValue} onChange={(e) => setFormValue(e.target.value)} placeholder="say something nice" />
         <button type="submit" disabled={!formValue}>🕊️</button>
+        <br></br>
       </form>
     </>)
   }
   function ChatMessage(props) {
     const { text, uid, photoURL, displayName} = props.message;
     const messageClass = uid === auth.currentUser.uid ? 'sent' : 'received';
-    console.log(uid)
     return (<>
       <div className={`message ${messageClass}`}>
         <Link to={'/chat/' + uid}>{displayName}</Link>
-        <img src={photoURL || 'https://api.adorable.io/avatars/23/abott@adorable.png'} />
+        <img className="chatImg" src={photoURL || 'https://api.adorable.io/avatars/23/abott@adorable.png'} />
         <p>{text}</p>
       </div>
     </>)

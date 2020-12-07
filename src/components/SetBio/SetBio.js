@@ -37,7 +37,7 @@ export default function SetBio() {
                     label="About Me"
                     multiline
                     rows={4}
-                    defaultValue={bio}
+                    // defaultValue={bio}
                     variant="outlined"
                 />
                 <br></br>

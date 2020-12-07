@@ -27,7 +27,7 @@ export default function SetUserName() {
     const classes = useStyles();
     const [value, setValue] = useState('');
 
-    const { uid, displayName } = auth.currentUser;
+    const { uid } = auth.currentUser;
 
     const updateUserName = () => {
         const userRef = firestore.collection('users').doc(uid)
