@@ -35,7 +35,7 @@ function Nav() {
     };
 
     return (
-        <AppBar position="static">
+        <AppBar position="sticky">
             <Toolbar>
 
                 <div className="container">
