@@ -11,7 +11,7 @@ import MyChats from "./pages/MyChats/MyChats";
 import Chat from "./pages/Chat/Chat";
 import SignIn from "./pages/SignIn/SignIn"
 import Footer from "./components/Footer/Footer";
-import OtherUserProfile from "./pages/OtherUserProfile/otherUserProfile"
+import OtherUserProfile from "./pages/OtherUserProfile/OtherUserProfile"
 import SelectedChategory from "./pages/SelectedChategory/SelectedChategory"
 
 import firebase from "firebase/app"
@@ -45,7 +45,7 @@ function App() {
             <Route exact path="/chat/:id" component={Chat}/>
             <Route exact path="/settings" component={Settings}/>
             <Route exact path="/topic/:id" component={SelectedChategory}/>
-            <Route exact path="/chat/:uid" component={OtherUserProfile}/>
+            <Route exact path="/otherprof/:uid" component={OtherUserProfile}/>
             <Route path="/*" component={NoMatch}/>
 
           </Switch>

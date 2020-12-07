@@ -46,7 +46,7 @@ const AddNewTopic = (props) => {
                 </div> */}
 
                 <div className="Topic">
-                    <TextField fullWidth="true" label="New Chategory Topic" variant="outlined" value={formValue} onChange={(e) => setFormValue(e.target.value)}/><br/>
+                    <TextField fullwidth="true" label="New Chategory Topic" variant="outlined" value={formValue} onChange={(e) => setFormValue(e.target.value)}/><br/>
                 </div>
 
                 <div className="AddNewButton">
