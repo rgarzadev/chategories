@@ -14,10 +14,11 @@ const firestore = firebase.firestore();
 function Home() {
 
     const{uid, displayName, photoURL} = auth.currentUser;
-   const usersRef = firestore.collection('users').doc(uid);
+    const usersRef = firestore.collection('users').doc(uid);
     usersRef.get().then(function(doc){
       if (!doc.exists){
         usersRef.set({
+        uid,
         displayName,
         photoURL
         })

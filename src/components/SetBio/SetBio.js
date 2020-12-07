@@ -31,7 +31,7 @@ export default function SetBio() {
                 label="About Me"
                 multiline
                 rows={4}
-                defaultValue={bio}
+                // value={value}
                 variant="outlined"
             />
             <Button size="small" color="primary">Update About Me</Button>
