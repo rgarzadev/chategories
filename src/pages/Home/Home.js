@@ -18,6 +18,7 @@ function Home() {
     usersRef.get().then(function(doc){
       if (!doc.exists){
         usersRef.set({
+        uid,
         displayName,
         photoURL
         })
