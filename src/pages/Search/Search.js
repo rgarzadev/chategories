@@ -39,7 +39,7 @@ function Search() {
 
                     <div className="col TextFieldPadding">
 
-                        <TextField fullwidth="true" label="Search" variant="outlined" onClick={() => onSearchFieldClick()}  onChange={handleInputChange} /><br />
+                        <TextField fullWidth="true" label="Search" variant="outlined" onClick={() => onSearchFieldClick()}  onChange={handleInputChange} /><br />
 
                     </div>
 
