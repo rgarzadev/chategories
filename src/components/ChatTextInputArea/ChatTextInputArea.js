@@ -13,6 +13,7 @@ import "./ChatTextInputArea.css";
 const useStyles = makeStyles((theme) => ({
     root: {
       flexGrow: 1,
+      marginBottom: '25px'
     },
     title: {
       flexGrow: 1,

@@ -13,6 +13,8 @@ import HomeIcon from '@material-ui/icons/Home';
 
 const useStyles = makeStyles((theme) => ({
   appBar: {
+    display: 'inline-block',
+    marginTop: '25px',
     top: 'auto',
     bottom: 0,
   },

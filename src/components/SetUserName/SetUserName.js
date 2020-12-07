@@ -24,7 +24,7 @@ export default function SetUserName() {
     const classes = useStyles();
     const [value, setValue] = useState('');
 
-    const { uid, displayName } = auth.currentUser;
+    const { uid } = auth.currentUser;
 
     const updateUserName = () => {
         const userRef = firestore.collection('users').doc(uid)
@@ -38,9 +38,9 @@ export default function SetUserName() {
             <TextField
                 required
                 id="outlined-required"
-                label="Display Name"
-                defaultValue={displayName}
+                label="Update Display Name"
                 variant="outlined"
+                defaultValue="Update Display Name"
                 value={value}
                 onChange={(e) => setValue(e.target.value)}
             />
