@@ -1,24 +1,32 @@
 import React from 'react';
-import "./otherUserProfile.css";
-
+import { useCollectionData } from 'react-firebase-hooks/firestore'
+import firebase from '../../firebase';
+import Switch from '../../components/Switch/Switch';
+import { useParams } from 'react-router-dom';
+import OtherUserChategories from '../../components/OtherUserChategories/OtherUserChategories'
 import OtherUserNameCard from '../../components/OtherUserNameCard/OtherUserNameCard';
 import OtherUserAboutMe from '../../components/OtherUserAboutMe/OtherUserAboutMe';
 import OtherUserMyPosts from '../../components/OtherUserMyPosts/OtherUserMyPosts';
-import ProfileDisplayName from '../../components/ProfileDisplayName/ProfileDisplayName';
+import "./OtherUserProfile.css";
 
+const firestore = firebase.firestore();
 
-import Switch from '../../components/Switch/Switch';
+function OtherUserProfile() {
+    let {uid} = useParams();
+    const usersRef = firestore.collection('users'); 
+    const query = usersRef.where('uid', '==', uid).limit(1)
 
+    const [users] = useCollectionData(query, { idField: 'id' });
 
-
-function otherUserProfile() {
     return (
 
         <div className="container">
 
             <br></br>
 
-            <ProfileDisplayName className="profile-display-name" />
+            <div className="profile-display-name">
+            {users && users.map(user => <ProfileDisplayName key={user.id} message={user} />)}
+            </div>
 
             <OtherUserNameCard />
 
@@ -29,18 +37,25 @@ function otherUserProfile() {
                         <br></br>
 
                     <>
-                    <Switch left="About Me" right="My Posts" LDisplay={<OtherUserAboutMe/>} RDisplay={<OtherUserMyPosts/>}/>
+
+                    <OtherUserAboutMe/>
+
+                    <Switch left="MyChategories" right="My Posts" LDisplay={<OtherUserChategories />} RDisplay={<OtherUserMyPosts/>}/>
                     </>
 
                     </div>
-
                 </div>
-
-
         </div>
-
-        
     )
 }
 
-export default otherUserProfile;
+function ProfileDisplayName(props) {
+    const {displayName} = props.message;
+    return (
+      <div className="OtherUserNamePlate" maxwidth="sm">
+        <h5>{displayName}'s Profile</h5>
+      </div>
+    )
+  }
+
+export default OtherUserProfile;

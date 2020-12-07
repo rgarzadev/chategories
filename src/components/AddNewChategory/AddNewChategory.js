@@ -43,11 +43,11 @@ const AddNewChategory = (props) => {
         >
             <Modal.Body>
                 <div className="Name">
-                    <TextField fullWidth="true" label="New Chategory Name" variant="outlined" onChange={(e) => setFormValue1(e.target.value)}/><br/>
+                    <TextField fullwidth="true" label="New Chategory Name" variant="outlined" onChange={(e) => setFormValue1(e.target.value)}/><br/>
                 </div>
 
                 <div className="Topic">
-                    <TextField fullWidth="true" label="New Chategory Topic" variant="outlined" onChange={(e) => setFormValue2(e.target.value)}/><br/>
+                    <TextField fullwidth="true" label="New Chategory Topic" variant="outlined" onChange={(e) => setFormValue2(e.target.value)}/><br/>
                 </div>
 
                 <div className="AddNewButton">

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import TextField from '@material-ui/core/TextField';
 import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
@@ -23,12 +23,16 @@ export default function SetBio() {
     const classes = useStyles();
 
     const { uid } = auth.currentUser;
-    const usersRef = firestore.collection('users').doc(uid);
+    const [value, setValue] = useState('');
 
-    const bio = usersRef.bio || "Tell us about yourself!"
+    const updateBio = () => {
+        const usersRef = firestore.collection('users').doc(uid)
+        usersRef.update({
+            userBio: value
+        })
+    }
 
-    return (
-
+    return (  
         <Container className="BioForm">
             <form className={classes.root} noValidate autoComplete="off"> 
                 <TextField
@@ -37,11 +41,12 @@ export default function SetBio() {
                     label="About Me"
                     multiline
                     rows={4}
-                    defaultValue={bio}
+                    value={value}
                     variant="outlined"
+                    onChange={(e) => setValue(e.target.value)}
                 />
                 <br></br>
-                <Button size="small" color="primary">Update About Me</Button>
+                <Button size="small" color="primary" onClick={() => updateBio()}>Update About Me</Button>
             </form> 
         </Container>
         

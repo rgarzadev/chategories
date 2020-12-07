@@ -44,7 +44,6 @@ export default function SetUserName() {
                     id="outlined-required"
                     fullWidth="true"
                     label="Display Name"
-                    defaultValue=''
                     variant="outlined"
                     value={value}
                     onChange={(e) => setValue(e.target.value)}
