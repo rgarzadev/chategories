@@ -38,9 +38,8 @@ export default function SetUserName() {
             <TextField
                 required
                 id="outlined-required"
-                label="Update Display Name"
+                label="Display Name"
                 variant="outlined"
-                defaultValue="Update Display Name"
                 value={value}
                 onChange={(e) => setValue(e.target.value)}
             />
