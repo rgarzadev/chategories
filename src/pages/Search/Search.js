@@ -28,8 +28,6 @@ function Search() {
     const usersRef = firestore.collection('chategories');
     const query = usersRef.where("title", "==", debouncedSearchTerm).limit(25);
     const [chategories] = useCollectionData(query, { idField: 'id' });
-    
-    console.log(chategories)
 
     return (
 
