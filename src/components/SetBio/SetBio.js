@@ -28,7 +28,7 @@ export default function SetBio() {
     const updateBio = () => {
         const usersRef = firestore.collection('users').doc(uid)
         usersRef.update({
-            userBio: value
+            bio: value
         })
     }
 
