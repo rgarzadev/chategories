@@ -6,6 +6,6 @@
 .MyChategories {
     border: solid black;
     min-height: 550px;
-    margin-bottom: 60px;
+    margin-bottom: 70px !important;
     background-color: red;
 }

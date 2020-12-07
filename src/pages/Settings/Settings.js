@@ -7,8 +7,9 @@ import CardActionArea from '@material-ui/core/CardActionArea';
 import CardMedia from '@material-ui/core/CardMedia';
 import SetUsername from '../../components/SetUserName/SetUserName';
 import firebase from "firebase"
-import "./Settings.css";
 import MyChategories from '../../components/MyChategories/MyChategories';
+import "./Settings.css";
+
 
 const auth = firebase.auth();
 const firestore = firebase.firestore();
@@ -30,32 +31,30 @@ function Settings() {
     const { photoURL } = auth.currentUser;
 
     return (
-        <div>
-
-            <br></br>
-
-            <h5> Edit Profile </h5>
-
-            <br></br>
-
-            <Container>
-                <Card className={classes.root}>
-                    <CardActionArea>
-                        <CardMedia
-                            component='img'
-                            className={classes.media}
-                            image={photoURL}
-                            title="User Profile Image"
-                        />
-                    </CardActionArea>
-                </Card>
+        <div style={{display: 'flex', justifyContent: 'center'}}>
+            <div>
                 <br></br>
-                <SetUsername />
-                <SetBio />
-                <MyChategories />
-            </Container>
-
-
+                <h5 className ='SettingsProfile' > Edit Profile </h5>
+                <br></br>
+                <Container className ='SettingsProfile'>
+                    <Card className={` ProfileCard ${classes.root}`}>
+                        <CardActionArea>
+                            <CardMedia
+                                component='img'
+                                className={classes.media}
+                                image={photoURL}
+                                title="User Profile Image"
+                            />
+                        </CardActionArea>
+                    </Card>
+                    <hr></hr>
+                    <SetUsername />
+                    <br></br>
+                    <SetBio />
+                    <hr></hr>
+                    <MyChategories />
+                </Container>
+            </div>
         </div>
 
     )

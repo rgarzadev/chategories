@@ -10,6 +10,8 @@ import SearchIcon from '@material-ui/icons/Search';
 import ForumIcon from '@material-ui/icons/Forum';
 import PersonIcon from '@material-ui/icons/Person';
 import HomeIcon from '@material-ui/icons/Home';
+import "./footer.css";
+
 
 const useStyles = makeStyles((theme) => ({
   appBar: {
@@ -32,6 +34,7 @@ function Footer() {
 };
 
   return (
+    <div className="footer">
       <AppBar position="fixed" color="primary" className={classes.appBar}>
         <Toolbar>
           
@@ -60,6 +63,7 @@ function Footer() {
         </Toolbar>
 
       </AppBar>
+    </div>
   );
 }
 
