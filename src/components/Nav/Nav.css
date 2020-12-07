@@ -5,3 +5,8 @@
 .AlignRight {
     text-align: right;
 }
+
+.MuiAppBar-colorPrimary {
+    color: #fff;
+    background-color: black !important;
+}
