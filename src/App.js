@@ -35,6 +35,7 @@ function App() {
       // <CssBaseline />
         <Router>
           <Nav/>
+          <div className="content">
           <Switch>
 
             {user ? <Route path="/" exact component={Home}/> : 
@@ -48,6 +49,7 @@ function App() {
             <Route path="/*" component={NoMatch}/>
 
           </Switch>
+          </div>
 
           {user ? <Footer/> : null}
 

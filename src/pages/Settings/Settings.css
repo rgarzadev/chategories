@@ -1,18 +1,14 @@
-.ContentArea {
+/* .ContentArea {
     padding-left: 10%;
     padding-right: 10%;
+  } */
+
+.SettingsProfile {
+    align-content: center;
+    text-align: center;
   }
-  
-  .bioContainer {
-    border: solid black;
-    min-height: 125px;
-    margin-bottom: 60px;
-    background-color: rgb(158, 147, 147);
-  }
-  
-  .MyChategories {
-    border: solid black;
-    min-height: 550px;
-    margin-bottom: 60px;
-    background-color: rgb(158, 147, 147);
-  }
+ 
+  .ProfileCard {
+    box-shadow:20px 20px 50px 15px grey !important; 
+}
+ 

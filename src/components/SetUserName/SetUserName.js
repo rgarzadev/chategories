@@ -3,7 +3,10 @@ import TextField from '@material-ui/core/TextField';
 import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import firebase from "../../firebase";
+import { Container } from '@material-ui/core';
+
 import 'firebase/auth';
+import './SetUserName';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -24,7 +27,7 @@ export default function SetUserName() {
     const classes = useStyles();
     const [value, setValue] = useState('');
 
-    const { uid, displayName } = auth.currentUser;
+    const { uid } = auth.currentUser;
 
     const updateUserName = () => {
         const userRef = firestore.collection('users').doc(uid)
@@ -34,19 +37,22 @@ export default function SetUserName() {
     }
 
     return (
-        <form className={classes.root} noValidate autoComplete="off">
-            <TextField
-                required
-                id="outlined-required"
-                label="Display Name"
-                defaultValue={displayName}
-                variant="outlined"
-                value={value}
-                onChange={(e) => setValue(e.target.value)}
-            />
-            <Button size="small" color="primary" onClick={() => updateUserName()}>
-                Change Display Name
-            </Button>
-        </form>
+        <Container className='DisplayNameForm'>
+            <form className={classes.root} noValidate autoComplete="off">
+                <TextField
+                    required
+                    id="outlined-required"
+                    fullWidth="true"
+                    label="Display Name"
+                    defaultValue=''
+                    variant="outlined"
+                    value={value}
+                    onChange={(e) => setValue(e.target.value)}
+                />
+                <Button size="small" color="primary" onClick={() => updateUserName()}>
+                    Change Display Name
+                </Button>
+            </form>
+        </Container>
     )
 }

@@ -30,8 +30,6 @@ function MyChategories() {
     const usersRef = firestore.collection('chategories');
     const query = usersRef.where("savedusers", 'array-contains', uid).limit(25);
     const [chategories] = useCollectionData(query, { idField: 'id' });
-    
-    console.log(chategories)
    
     
    return (
