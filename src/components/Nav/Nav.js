@@ -8,6 +8,8 @@ import { useHistory } from "react-router-dom";
 import HighlightOffIcon from '@material-ui/icons/HighlightOff';
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 import firebase from "../../firebase"
+
+import './Nav.css';
 {/* <Button color="inherit">Login</Button> */}
 
 const auth = firebase.auth();
@@ -29,30 +31,33 @@ function Nav() {
     };
    
     return (
-        <AppBar position="static">
-            <Toolbar>
-                <Link style={ navStyle } to="/">
-                <IconButton edge="start" color="inherit" aria-label="menu">
-                    <ArrowBackIcon onClick={() => history.goBack()} fontSize="large"/>
-                </IconButton>
-                </Link>
+        
+            <AppBar position="static">
+                <Toolbar>
+                <div className='navbar'>
+                    <Link style={ navStyle } to="/">
+                    <IconButton edge="start" color="inherit" aria-label="menu">
+                        <ArrowBackIcon onClick={() => history.goBack()} fontSize="large"/>
+                    </IconButton>
+                    </Link>
 
-                <Typography style={ navStyle } align="center" variant="h4" className={classes.title}>
-                    CG
+                    <Typography style={ navStyle } align="center" variant="h4" className={classes.title}>
+                        CG
+                    </Typography>
+
+                    {/* <Link style={ navStyle } href="https://youtube.com" target="_blank"> */}
+                    <Link to={{ pathname: "/" }} target="_blank" style={ navStyle }>
+                    <IconButton edge="start" color="inherit" aria-label="menu">
+                        <HighlightOffIcon onClick={() => auth.signOut()} fontSize="large"/>
+                        <Typography variant="button" display="block" gutterBottom>
+                Log Out
                 </Typography>
-
-                {/* <Link style={ navStyle } href="https://youtube.com" target="_blank"> */}
-                <Link to={{ pathname: "/" }} target="_blank" style={ navStyle }>
-                <IconButton edge="start" color="inherit" aria-label="menu">
-                    <HighlightOffIcon onClick={() => auth.signOut()} fontSize="large"/>
-                    <Typography variant="button" display="block" gutterBottom>
-              Log Out
-            </Typography>
-                </IconButton>
-                </Link>
-
-            </Toolbar>
+                    </IconButton>
+                    </Link>
+                </div>
+                </Toolbar>
         </AppBar>
+        
     )
 }
 

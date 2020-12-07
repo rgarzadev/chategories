@@ -1,7 +1,7 @@
-.ContentArea {
+/* .ContentArea {
     padding-left: 10%;
     padding-right: 10%;
-  }
+  } */
   
   .bioContainer {
     border: solid black;
@@ -12,7 +12,13 @@
   
   .MyChategories {
     border: solid black;
-    min-height: 550px;
+    /* min-height: 550px; */
     margin-bottom: 60px;
     background-color: rgb(158, 147, 147);
   }
+
+.SettingsProfile {
+    align-content: center;
+    text-align: center;
+  }
+ 

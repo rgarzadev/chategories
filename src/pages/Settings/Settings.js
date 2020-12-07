@@ -15,22 +15,27 @@ function Settings() {
 
     // const usersRef = firestore.collection('users').doc(uid)
     return (
-        <div>
+        <div style={{display: 'flex', justifyContent: 'center'}}>
+            <div>
 
-            <br></br>
+                <br></br>
 
-            <h5> Edit Profile </h5>
+                <h5 className ='SettingsProfile' > Edit Profile </h5>
 
-            <br></br>
+                <br></br>
 
-            <Container>
-                <SetPicture />
-                <SetUsername />
-                <SetBio />
-                <MyChategories />
-            </Container>
+                <Container className ='SettingsProfile'>
+                    <SetPicture />
+                    <hr></hr>
+                    <SetUsername />
+                    <br></br>
+                    <SetBio />
+                    <hr></hr>
+                    <MyChategories />
+                </Container>
 
 
+            </div>
         </div>
 
     )
