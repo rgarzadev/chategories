@@ -11,16 +11,10 @@ import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 import "./Nav.css";
 
 import firebase from "../../firebase"
-<<<<<<< HEAD
 {/* <Button color="inherit">Login</Button> */ }
 
 
 
-=======
-
-import './Nav.css';
-{/* <Button color="inherit">Login</Button> */}
->>>>>>> 67b105a18b3ec72ba155991e3891440e47550e9d
 
 const auth = firebase.auth();
 
@@ -41,7 +35,6 @@ function Nav() {
     };
 
     return (
-<<<<<<< HEAD
         <AppBar position="sticky">
             <Toolbar>
 
@@ -84,33 +77,6 @@ function Nav() {
                 </div>
 
             </Toolbar>
-=======
-        
-            <AppBar position="static">
-                <Toolbar>
-                    
-                    <Link style={ navStyle } to="/">
-                    <IconButton edge="start" color="inherit" aria-label="menu">
-                        <ArrowBackIcon onClick={() => history.goBack()} fontSize="large"/>
-                    </IconButton>
-                    </Link>
-
-                    <Typography style={ navStyle } align="center" variant="h4" className={classes.title}>
-                        CG
-                    </Typography>
-
-                    {/* <Link style={ navStyle } href="https://youtube.com" target="_blank"> */}
-                    <Link to={{ pathname: "/" }} target="_blank" style={ navStyle }>
-                    <IconButton edge="start" color="inherit" aria-label="menu">
-                        <HighlightOffIcon onClick={() => auth.signOut()} fontSize="large"/>
-                        <Typography variant="button" display="block" gutterBottom>
-                Log Out
-                </Typography>
-                    </IconButton>
-                    </Link>
-
-                </Toolbar>
->>>>>>> 67b105a18b3ec72ba155991e3891440e47550e9d
         </AppBar>
         
     )
