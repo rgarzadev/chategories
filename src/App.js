@@ -45,7 +45,7 @@ function App() {
             <Route exact path="/chat/:id" component={Chat}/>
             <Route exact path="/settings" component={Settings}/>
             <Route exact path="/topic/:id" component={SelectedChategory}/>
-            <Route exact path="/chat/:uid" component={OtherUserProfile}/>
+            <Route exact path="/otherprof/:uid" component={OtherUserProfile}/>
             <Route path="/*" component={NoMatch}/>
 
           </Switch>

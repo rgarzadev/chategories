@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react';
-import Link from '@material-ui/core/Link';
 import firebase from "../../firebase"
 import {useParams} from 'react-router-dom'
+import {Link} from "react-router-dom"
 import { useCollectionData } from 'react-firebase-hooks/firestore';
 import "./Chat.css";
 
@@ -57,7 +57,7 @@ function Chat() {
     const messageClass = uid === auth.currentUser.uid ? 'sent' : 'received';
     return (<>
       <div className={`message ${messageClass}`}>
-        <Link to={'/chat/' + uid}>{displayName}</Link>
+        <Link to={'/otherprof/' + uid}>{displayName}</Link>
         <img className="chatImg" src={photoURL || 'https://api.adorable.io/avatars/23/abott@adorable.png'} />
         <p>{text}</p>
       </div>
