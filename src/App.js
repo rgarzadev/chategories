@@ -11,7 +11,7 @@ import MyChats from "./pages/MyChats/MyChats";
 import Chat from "./pages/Chat/Chat";
 import SignIn from "./pages/SignIn/SignIn"
 import Footer from "./components/Footer/Footer";
-import OtherUserProfile from "./pages/OtherUserProfile/OtherUserProfile"
+import OtherUserProfile from "./pages/OtherUserProfile/otherUserProfile"
 import SelectedChategory from "./pages/SelectedChategory/SelectedChategory"
 
 import firebase from "firebase/app"
