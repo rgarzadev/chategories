@@ -27,7 +27,6 @@ function ChategoryTopicsList() {
     };
     
     let {id} = useParams();
-    console.log(id);
     const topicsRef = firestore.collection('topics');
     const query = topicsRef.where('chategory', '==', id).limit(25);
     const [topics] = useCollectionData(query, { idField: 'id' });

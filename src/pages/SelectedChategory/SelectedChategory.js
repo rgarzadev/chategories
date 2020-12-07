@@ -18,7 +18,6 @@ const firestore = firebase.firestore();
 function SelectedChategory() {
     const { uid } = auth.currentUser;
     let {id} = useParams();
-    console.log(id)
     
     
 
@@ -31,8 +30,7 @@ function SelectedChategory() {
             console.log(chategoriesRef);
         }).catch((error) => {
             console.log(error)
-        })
-        
+        })    
     }
     
 

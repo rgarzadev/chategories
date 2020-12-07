@@ -10,11 +10,9 @@ const firestore = firebase.firestore();
 
 function OtherUserChategories() {
     let { uid } = useParams();
-    console.log(uid)
     const chategoriesRef = firestore.collection('chategories');
     const query = chategoriesRef.where('savedusers', 'array-contains', uid).limit(25)
     const [chategories] = useCollectionData(query, { idField: 'id' });
-    console.log(chategories)
 
     return (
         <div className="ContentArea">

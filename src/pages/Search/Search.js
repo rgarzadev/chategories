@@ -28,8 +28,6 @@ function Search() {
     const usersRef = firestore.collection('chategories');
     const query = usersRef.where("title", "==", debouncedSearchTerm).limit(25);
     const [chategories] = useCollectionData(query, { idField: 'id' });
-    
-    console.log(chategories)
 
     return (
 
@@ -41,7 +39,7 @@ function Search() {
 
                     <div className="col TextFieldPadding">
 
-                        <TextField fullwidth="true" label="Search" variant="outlined" onClick={() => onSearchFieldClick()}  onChange={handleInputChange} /><br />
+                        <TextField fullWidth="true" label="Search" variant="outlined" onClick={() => onSearchFieldClick()}  onChange={handleInputChange} /><br />
 
                     </div>
 

@@ -29,7 +29,6 @@ function OtherUserNameCard() {
     const usersRef = firestore.collection('users');
     const query = usersRef.where('uid', '==', uid).limit(1)
     const [users] = useCollectionData(query, { idField: 'id' });
-    console.log(users)
 
     return (
         <div className= "ContentArea">

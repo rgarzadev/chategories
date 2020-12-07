@@ -20,7 +20,8 @@ function Home() {
         usersRef.set({
         uid,
         displayName,
-        photoURL
+        photoURL,
+        bio: "This user has not set a bio yet"
         })
       }
     })
