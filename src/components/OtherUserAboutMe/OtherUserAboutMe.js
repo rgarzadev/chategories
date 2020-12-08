@@ -20,7 +20,7 @@ function OtherUserAboutMe() {
 
             <div className= "ContentArea">
 
-                <h5> Bio:</h5>
+                <h5>About me:</h5>
 
                 <Container className="bioContainer" maxWidth="sm">
 
@@ -31,8 +31,6 @@ function OtherUserAboutMe() {
                 </Container>
 
             </div>
-
-            <br></br>
 
         </div>
 
