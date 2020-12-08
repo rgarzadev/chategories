@@ -25,7 +25,8 @@ function Chat() {
 
     const sendMessage = async (e) => {
       e.preventDefault();
-      const { uid, photoURL } = auth.currentUser;
+      const { uid } = auth.currentUser;
+      const photoURL = users[0].photoURL
       const displayName = users[0].displayName
 
       // const {displayName} = [users.[0]]

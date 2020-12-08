@@ -3,6 +3,7 @@ import { useCollectionData } from 'react-firebase-hooks/firestore'
 import firebase from '../../firebase';
 import Switch from '../../components/Switch/Switch';
 import { useParams } from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import OtherUserChategories from '../../components/OtherUserChategories/OtherUserChategories'
 import OtherUserNameCard from '../../components/OtherUserNameCard/OtherUserNameCard';
 import OtherUserAboutMe from '../../components/OtherUserAboutMe/OtherUserAboutMe';
