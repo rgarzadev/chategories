@@ -4,7 +4,7 @@
 }
 
 .SearchResults {
-    border: solid;
+    border: 1px solid;
     border-radius: 16px;
     min-height: 550px;
     margin-bottom: 6px;

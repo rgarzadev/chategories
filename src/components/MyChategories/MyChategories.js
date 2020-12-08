@@ -1,6 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { Container } from '@material-ui/core';
+import { Button, Container } from '@material-ui/core';
 import firebase from "firebase"
 import "./MyChategories.css";
 import 'firebase/auth';
@@ -51,7 +51,9 @@ function Chategory(props) {
   const { title } = props.message;
 return (<>
     <div>
-    <Link to={'/topic/' + title}>{title}</Link>
+    {/* <Link to={'/topic/' + title}>{title}</Link> */}
+    <Button variant="outlined" color="primary" href={'/topic/' + title}>{ title }</Button>
+
    </div>
   </>)
 }
