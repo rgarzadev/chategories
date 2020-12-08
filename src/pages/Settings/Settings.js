@@ -29,7 +29,7 @@ function Settings() {
                 <Container className='SettingsProfile'>
                     <h5>{displayName}</h5>
                     <MyUserNameCard />
-                    <Button onClick={() => setShow(true)}>Edit Display Name</Button>
+                    <Button onClick={() => setShow(true)}>Edit Display Name/Picture</Button>
                     <SetUserName show={modal} onHide={() => setShow(false)} />
                     <hr></hr>
                     <div className="ContentArea">
