@@ -1,6 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { Container } from '@material-ui/core';
+import { Button, Container } from '@material-ui/core';
 import {Link} from 'react-router-dom';
 import "./NewestChategories.css";
 import firebase from "../../firebase"
@@ -10,6 +10,7 @@ const firestore = firebase.firestore();
 const useStyles = makeStyles((theme) => ({
     root: {
       flexGrow: 1,
+      margin: theme.spacing(1),
     },
     title: {
       flexGrow: 1,
@@ -37,11 +38,15 @@ function NewestChategories() {
     )
 }
 function Chategories(props) {
+  const classes = useStyles();
   const { title } = props.message;
-return (<>
-    <div>
-    <Link to={'/topic/' + title}>{title}</Link>
-   </div>
+  return (<>
+      <div className={classes.root}>
+          {/* <Link to={'/topic/' + title}>{title}</Link> */}
+          <Button variant="outlined" color="primary" href={'/topic/' + title}>
+              { title }
+          </Button>
+      </div>
   </>)
 }
 
