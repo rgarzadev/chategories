@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container } from '@material-ui/core';
+import { Button, Container } from '@material-ui/core';
 import firebase from "../../firebase";
 import { useParams } from 'react-router-dom'
 import {Link} from "react-router-dom"
@@ -19,7 +19,7 @@ function OtherUserMyPosts() {
 
             <div className= "ContentArea">
 
-                <h5> Recent Posts: </h5>
+                {/* <h5> Recent Posts: </h5> */}
 
                 <Container className="OtherUserMyPosts" maxWidth="sm">
 
@@ -40,7 +40,11 @@ function Topics(props) {
     const { title, id } = props.message;
   return (<>
       <div>
-      <Link to={'/chat/' + id}>{title}</Link>
+
+      {/* <Link to={'/chat/' + id}>{title}</Link> */}
+
+      <Button variant="outlined" color="secondary" href={'/chat/' + id}>{title}</Button>
+
      </div>
     </>)
     }
