@@ -21,13 +21,9 @@ function Settings() {
     const [modalShow, setModalShow] = React.useState(false);
 
     return (
-        <div style={{ display: 'flex', justifyContent: 'center' }}>
             <div>
-                <br></br>
                 <h5 className='SettingsProfile' > Edit Profile </h5>
-                <br></br>
                 <Container className='SettingsProfile'>
-                    <h5>{displayName}</h5>
                     <MyUserNameCard />
                     <Button onClick={() => setShow(true)}>Edit Display Name/Picture</Button>
                     <SetUserName show={modal} onHide={() => setShow(false)} />
@@ -49,7 +45,6 @@ function Settings() {
                     <MyChategories />
                 </Container>
             </div>
-        </div>
     )
 }
 
