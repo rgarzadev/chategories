@@ -4,8 +4,9 @@
 }
 
 .OtherUserChategories {
-    border: solid black;
-    min-height: 550px;
+    border: 1px solid black;
+    border-radius: 16px;
+      min-height: 550px;
     margin-bottom: 60px;
     background-color: rgb(153, 139, 139);
 }

@@ -4,10 +4,11 @@
 }
 
 .bioContainer {
-  border: solid black;
+  border: 1px solid black;
+  border-radius: 16px;
   min-height: 125px;
-  margin-bottom: 60px;
-  background-color: rgb(158, 147, 147);
+  margin-bottom: 0px;
+  background-color: white;
 }
 
 /* .MyChategories {

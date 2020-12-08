@@ -22,25 +22,32 @@ function Settings() {
 
     return (
             <div>
-                <h5 className='SettingsProfile' > Edit Profile </h5>
+                <h5 className='SettingsProfile' > Edit My Profile </h5>
                 <Container className='SettingsProfile'>
                     <MyUserNameCard />
-                    <Button onClick={() => setShow(true)}>Edit Display Name/Picture</Button>
+
+                    {/* <Button onClick={() => setShow(true)}>Edit Display Name/Picture</Button> */}
+                    <Button variant="outlined" color="secondary" onClick={() => setShow(true)}>Edit Display Name/Picture</Button>
+
                     <SetUserName show={modal} onHide={() => setShow(false)} />
-                    <hr></hr>
                     <div className="ContentArea">
                         <div className="ContentArea">
+
                             <h5>About Me:</h5>
+
                             <Container className="bioContainer" maxWidth="sm">
                                 <div className="bioBox">
                                     {users && users.map(user => <Bio key={user.id} message={user} />)}
                                 </div>
                             </Container>
-                            <Button onClick={() => setModalShow(true)}>Edit About Me</Button>
+
+                            {/* <Button onClick={() => setModalShow(true)}>Edit About Me</Button> */}
+                            <Button variant="outlined" color="secondary" onClick={() => setModalShow(true)}>Edit About Me</Button>
+
                             <SetBio show={modalShow} onHide={() => setModalShow(false)} />
                         </div>
+                        
                     </div>
-                    <hr></hr>
                     <h5>My Chategories</h5>
                     <MyChategories />
                 </Container>
