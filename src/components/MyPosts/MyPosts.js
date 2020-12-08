@@ -28,7 +28,6 @@ function MyPosts() {
     const topicsRef = firestore.collection('topics');
     const query = topicsRef.where('author', '==', uid).limit(25);
     const [topics] = useCollectionData(query, { idField: 'id' });
-    console.log(topics)
    
 
     return (

@@ -1,63 +1,63 @@
 import React from 'react';
-import { Container } from '@material-ui/core';
+import { Container, Button } from '@material-ui/core';
+import MyUserNameCard from '../../components/MyUserNameCard/MyUserNameCard';
+import firebase from "firebase";
 import SetBio from '../../components/SetBio/SetBio';
-import { makeStyles } from '@material-ui/core/styles';
-import Card from '@material-ui/core/Card';
-import CardActionArea from '@material-ui/core/CardActionArea';
-import CardMedia from '@material-ui/core/CardMedia';
-import SetUsername from '../../components/SetUserName/SetUserName';
-import firebase from "firebase"
+import SetUserName from '../../components/SetUserName/SetUserName';
 import MyChategories from '../../components/MyChategories/MyChategories';
 import "./Settings.css";
-
+import { useCollectionData } from 'react-firebase-hooks/firestore';
 
 const auth = firebase.auth();
 const firestore = firebase.firestore();
 
-const useStyles = makeStyles((theme) => ({
-    root: {
-        '& > *': {
-            margin: theme.spacing(1),
-        },
-        maxWidth: 345,
-    },
-    input: {
-      display: 'none',
-    }
-}));
-
 function Settings() {
-    const classes = useStyles();
-    const { photoURL } = auth.currentUser;
+    let { uid, displayName } = auth.currentUser;
+
+    const usersRef = firestore.collection('users');
+    const query = usersRef.where('uid', '==', uid).limit(1)
+    const [users] = useCollectionData(query, { idField: 'id' });
+    const [modal, setShow] = React.useState(false);
+    const [modalShow, setModalShow] = React.useState(false);
 
     return (
-        <div style={{display: 'flex', justifyContent: 'center'}}>
+        <div style={{ display: 'flex', justifyContent: 'center' }}>
             <div>
                 <br></br>
-                <h5 className ='SettingsProfile' > Edit Profile </h5>
+                <h5 className='SettingsProfile' > Edit Profile </h5>
                 <br></br>
-                <Container className ='SettingsProfile'>
-                    <Card className={` ProfileCard ${classes.root}`}>
-                        <CardActionArea>
-                            <CardMedia
-                                component='img'
-                                className={classes.media}
-                                image={photoURL}
-                                title="User Profile Image"
-                            />
-                        </CardActionArea>
-                    </Card>
+                <Container className='SettingsProfile'>
+                    <h5>{displayName}</h5>
+                    <MyUserNameCard />
+                    <Button onClick={() => setShow(true)}>Edit Display Name/Picture</Button>
+                    <SetUserName show={modal} onHide={() => setShow(false)} />
                     <hr></hr>
-                    <SetUsername />
-                    <br></br>
-                    <SetBio />
+                    <div className="ContentArea">
+                        <div className="ContentArea">
+                            <h5>About Me:</h5>
+                            <Container className="bioContainer" maxWidth="sm">
+                                <div className="bioBox">
+                                    {users && users.map(user => <Bio key={user.id} message={user} />)}
+                                </div>
+                            </Container>
+                            <Button onClick={() => setModalShow(true)}>Edit About Me</Button>
+                            <SetBio show={modalShow} onHide={() => setModalShow(false)} />
+                        </div>
+                    </div>
                     <hr></hr>
+                    <h5>My Chategories</h5>
                     <MyChategories />
                 </Container>
             </div>
         </div>
-
     )
 }
+
+function Bio(props) {
+    const {bio} = props.message;
+    return(
+      <div>{bio}</div>
+    )
+  }
 
 export default Settings;

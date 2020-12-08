@@ -27,7 +27,6 @@ function Chat() {
       e.preventDefault();
       const { uid, photoURL } = auth.currentUser;
       const displayName = users[0].displayName
-      console.log(displayName)
 
       // const {displayName} = [users.[0]]
       await messagesRef.add({
