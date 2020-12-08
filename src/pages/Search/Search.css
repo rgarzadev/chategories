@@ -11,3 +11,7 @@ h6 {
     padding-left: 4% !important;
     padding-right: 4% !important;
 }
+
+.MuiButton-containedPrimary {
+    background-color: black;
+}

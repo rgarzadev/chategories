@@ -61,7 +61,7 @@ function Search() {
         </Container>
         </div>  : <NewestChategories/>}</div>
 
-                        <Button variant="contained" color="primary" onClick={() => setModalShow(true)}>Add a NEW Chategory</Button>
+                        <Button className='SearchBtn'variant="contained" color="secondary" onClick={() => setModalShow(true)}>Add a NEW Chategory</Button>
 
                         <AddNewChategory show={modalShow} onHide={() => setModalShow(false)} />
 

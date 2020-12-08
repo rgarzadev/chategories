@@ -41,7 +41,7 @@ const SetBio = (props) => {
                     <TextField className={classes.input} label="Update About Me" variant="outlined" value={value} onChange={(e) => setValue(e.target.value)}/><br/>
                 </div>
                 <div className="UpdateButton">
-                    <Button variant="contained" type="submit " color="primary" onClick={updateBio}>Update</Button>
+                    <Button variant="contained" type="submit " color="secondary" onClick={updateBio}>Update</Button>
                 </div>
             </Modal.Body>
         </Modal>    
