@@ -21,7 +21,7 @@ function MyUserNameCard() {
             <div className="container">
               <div className="row">
                   {/* <img className="col-4 MyUserImage" src={photoURL} alt="photoURL"></img> */}
-                  <div className="col-8 MyUserNamePlate">
+                  <div className="col MyUserNamePlate">
                     {users && users.map(user => <User key={user.id} message={user} />)}
 
                   </div>
