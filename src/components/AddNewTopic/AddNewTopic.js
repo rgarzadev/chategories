@@ -44,7 +44,7 @@ const AddNewTopic = (props) => {
                 </div>
 
                 <div className="AddNewButton">
-                    <Button variant="contained" type="submit " color="primary" onClick={createTopic}>Add NEW Topic</Button>
+                    <Button variant="contained" type="submit " color="secondary" onClick={createTopic}>Add NEW Topic</Button>
                 </div>
 
             </Modal.Body>
