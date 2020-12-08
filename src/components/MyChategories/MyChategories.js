@@ -60,11 +60,11 @@ function Chategory(props) {
 
   return (<>
     <div>
-      <Link to={'/topic/' + title}>{title}</Link>
-      <Button color="primary" onClick={() => onButtonClick()}>Remove</Button>
-    </div>
-  </>
-  )
+    {/* <Link to={'/topic/' + title}>{title}</Link> */}
+    <Button variant="outlined" color="primary" href={'/topic/' + title}>{ title }</Button>
+
+   </div>
+  </>)
 }
 
 export default MyChategories;
