@@ -49,13 +49,13 @@ const SetUserName = (props) => {
                     <TextField className={classes.input} label="Update Display Name" variant="outlined" value={value} onChange={(e) => setValue(e.target.value)}/><br />
                 </div>
                 <div className="UpdateButton">
-                    <Button variant="contained" type="submit " color="primary" onClick={updateUserName}>Update Name</Button>
+                    <Button variant="contained" type="submit " color="secondary" onClick={updateUserName}>Update Name</Button>
                 </div>
                 <div className="Pic">
                     <TextField className={classes.input} label="Enter Photo URL" variant="outlined" value={value2} onChange={(e) => setValue2(e.target.value)}/><br />
                 </div>
                 <div className="UpdateButton">
-                    <Button variant="contained" type="submit " color="primary" onClick={updatePic}>Update Picture</Button>
+                    <Button variant="contained" type="submit " color="secondary" onClick={updatePic}>Update Picture</Button>
                 </div>
             </Modal.Body>
         </Modal>

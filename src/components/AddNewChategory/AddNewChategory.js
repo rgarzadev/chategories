@@ -49,7 +49,7 @@ const AddNewChategory = (props) => {
 
                 <div className="AddNewButton">
                  <Link to={'/topic/' + formValue1}>
-                    <Button variant="contained" color="primary" onClick={createChategory} >Add NEW Chategory</Button>
+                    <Button variant="contained" color="secondary" onClick={createChategory} >Add NEW Chategory</Button>
                 </Link>
                 </div>
 
