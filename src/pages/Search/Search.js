@@ -109,7 +109,7 @@ function Chategory(props) {
     return (<>
         <div className={classes.root}>
             {/* <Link to={'/topic/' + title}>{title}</Link> */}
-            <Button variant="outlined" color="primary" href={'/topic/' + title}>{ title }</Button>
+            <Button variant="outlined" color="secondary" href={'/topic/' + title}>{ title }</Button>
         </div>
     </>)
 }

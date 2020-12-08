@@ -46,7 +46,7 @@ function Topics(props) {
 return (<>
     <div>
     {/* <Link to={'/chat/' + id}>{title}</Link> */}
-    <Button variant="outlined" color="primary" href={'/chat/' + id}>{title}</Button>
+    <Button variant="outlined" color="secondary" href={'/chat/' + id}>{title}</Button>
 
    </div>
   </>)
