@@ -1,20 +1,14 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { AppBar, Toolbar, IconButton, Typography, Button } from '@material-ui/core';
+import { AppBar, Toolbar, IconButton, Typography } from '@material-ui/core';
 import { Link } from 'react-router-dom';
 import 'firebase/auth';
 import { useHistory } from "react-router-dom";
-
 import HighlightOffIcon from '@material-ui/icons/HighlightOff';
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
-
 import "./Nav.css";
-
 import firebase from "../../firebase"
-{/* <Button color="inherit">Login</Button> */ }
-
-
-
+// {/* <Button color="inherit">Login</Button> */ }
 
 const auth = firebase.auth();
 
@@ -37,29 +31,21 @@ function Nav() {
     return (
         <AppBar position="sticky">
             <Toolbar>
-
                 <div className="container">
-
                     <div className="row">
-
                         <div className="col-4 nav-grid align-self-center">
-
                             <Link style={navStyle} to="/">
                                 <IconButton edge="start" color="inherit" aria-label="menu">
                                     <ArrowBackIcon onClick={() => history.goBack()} fontSize="large" />
                                 </IconButton>
                             </Link>
                         </div>
-
                         <div className="col-4 nav-grid align-self-center">
-
                             <Typography style={navStyle} align="center" variant="h4" className={classes.title}>
                                 C||G
                             </Typography>
                         </div>
-
                         <div className="col-4 nav-grid AlignRight">
-
                             {/* <Link style={ navStyle } href="https://youtube.com" target="_blank"> */}
                             <Link to={{ pathname: "/" }} target="_blank" style={navStyle}>
                                 <IconButton edge="start" color="inherit" aria-label="menu">
@@ -69,16 +55,11 @@ function Nav() {
                                     <HighlightOffIcon onClick={() => auth.signOut()} fontSize="large" />
                                 </IconButton>
                             </Link>
-
                         </div>
-
                     </div>
-
                 </div>
-
             </Toolbar>
-        </AppBar>
-        
+        </AppBar>      
     )
 }
 

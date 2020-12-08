@@ -3,11 +3,7 @@ import { Modal } from 'react-bootstrap';
 import {Button, TextField} from '@material-ui/core';
 import firebase from "firebase/app"
 import {useParams} from 'react-router-dom';
-
 import "./AddNewTopic.css";
-
-
-
 
 const firestore = firebase.firestore();
 const auth = firebase.auth();
@@ -17,8 +13,6 @@ const AddNewTopic = (props) => {
     let {id} = useParams();
     const topicsRef = firestore.collection('topics');
     const [formValue, setFormValue] = useState('');
-
-   
 
     const createTopic = async (e) => {
         await topicsRef.doc(id+formValue).set({
@@ -58,4 +52,4 @@ const AddNewTopic = (props) => {
     )
 }
 
-export default AddNewTopic
+export default AddNewTopic;

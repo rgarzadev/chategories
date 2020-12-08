@@ -1,13 +1,10 @@
 import React from 'react';
-
 import { Button } from '@material-ui/core';
-
 import ChategoryTopicsList from "../../components/ChategoryTopicsList/ChategoryTopicsList";
 import ChategoryNameCard from "../../components/ChategoryNameCard/ChategoryNameCard";
 import AddNewTopic from "../../components/AddNewTopic/AddNewTopic";
 import firebase from "../../firebase"
 import {useParams} from 'react-router-dom'
-import { useCollectionData } from 'react-firebase-hooks/firestore';
 import 'firebase/auth';
 import "./SelectedChategory.css";
 
