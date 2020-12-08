@@ -1,12 +1,16 @@
 import React from 'react';
-import { Container } from '@material-ui/core';
+import { Button, Container } from '@material-ui/core';
 import firebase from "../../firebase";
 import { useParams } from 'react-router-dom'
-import {Link} from "react-router-dom"
+import { Link } from "react-router-dom"
 import { useCollectionData } from 'react-firebase-hooks/firestore'
 import "./OtherUserChategories.css";
 
+
+
 const firestore = firebase.firestore();
+
+const auth = firebase.auth();
 
 function OtherUserChategories() {
     let { uid } = useParams();
@@ -26,11 +30,27 @@ function OtherUserChategories() {
 }
 
 function Chategory(props) {
-
     const { title } = props.message;
+    const {uid} = auth.currentUser;
+  
+    const onButtonClick = () => {
+      const chategoriesRef = firestore.collection("chategories").doc(title);
+      // const [chategories] = useCollectionData(query, {idfield: 'id'})
+      chategoriesRef.update({
+        savedusers: firebase.firestore.FieldValue.arrayRemove(uid)
+      }).then(() => {
+        console.log(chategoriesRef);
+      }).catch((error) => {
+        console.log(error)
+      })
+    }
+
     return (<>
         <div>
-            <Link to={'/topic/' + title}>{title}</Link>
+            {/* <Link to={'/topic/' + title}>{title}</Link> */}
+
+            <Button variant="outlined" color="secondary" href={'/topic/' + title}>{title}</Button>
+
         </div>
     </>
     )

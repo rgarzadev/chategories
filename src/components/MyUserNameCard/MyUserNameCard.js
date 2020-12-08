@@ -35,16 +35,21 @@ function MyUserNameCard() {
 function User(props) {
   const {displayName, photoURL} = props.message;
   return(
+
     <div className='container center-container'>
+      <br></br>
 
       <div className='row photo'>
-        <img className="col MyUserImage" src={photoURL} alt="photoURL"></img>
+        <img  className="col-12 MyUserImage" src={photoURL} alt="photoURL"></img>
       </div>
+
+      <hr></hr>
 
       <div className='row namePlate'>
-        <div className='col MyUserNamePlate'><h2>{displayName}</h2></div>
+        <div className='col-12 MyUserNamePlate'><h2>{displayName}</h2></div>
       </div>
-
+      
+      <br></br>
     </div>
     
   )

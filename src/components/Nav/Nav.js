@@ -4,7 +4,6 @@ import { AppBar, Toolbar, IconButton, Typography } from '@material-ui/core';
 import { Link } from 'react-router-dom';
 import 'firebase/auth';
 import { useHistory } from "react-router-dom";
-import HighlightOffIcon from '@material-ui/icons/HighlightOff';
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 import "./Nav.css";
 import firebase from "../../firebase"
@@ -50,10 +49,11 @@ function Nav() {
                             {/* <Link style={ navStyle } href="https://youtube.com" target="_blank"> */}
                             <Link to={{ pathname: "/" }} target="_blank" style={navStyle}>
                                 <IconButton edge="start" color="inherit" aria-label="menu">
-                                    <Typography variant="button" display="inline" gutterBottom>
-                                        Log Out
-                                    </Typography>
-                                    <HighlightOffIcon onClick={() => auth.signOut()} fontSize="large" />
+                                    
+                                        <Typography onClick={() => auth.signOut()} fontSize="large" variant="button" display="inline" gutterBottom>
+                                            Log Out
+                                        </Typography>
+
                                 </IconButton>
                             </Link>
                         </div>
