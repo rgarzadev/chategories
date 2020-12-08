@@ -39,13 +39,13 @@ function User(props) {
     <div className='container center-container'>
       <br></br>
 
-      <div className='row-12 photo'>
+      <div className='row photo'>
         <img  className="col-12 MyUserImage" src={photoURL} alt="photoURL"></img>
       </div>
 
       <hr></hr>
 
-      <div className='row-12 namePlate'>
+      <div className='row namePlate'>
         <div className='col-12 MyUserNamePlate'><h2>{displayName}</h2></div>
       </div>
       
