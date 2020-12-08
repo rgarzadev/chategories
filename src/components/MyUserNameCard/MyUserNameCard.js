@@ -40,13 +40,15 @@ function User(props) {
       <br></br>
 
       <div className='row photo'>
-        <img  className="col-12 MyUserImage" src={photoURL} alt="photoURL"></img>
+        <div className="col">
+          <img  className="MyUserImage" src={photoURL} alt="photoURL"></img>
+        </div>
       </div>
 
       <hr></hr>
 
       <div className='row namePlate'>
-        <div className='col-12 MyUserNamePlate'><h2>{displayName}</h2></div>
+        <div className='col MyUserNamePlate'><h2>{displayName}</h2></div>
       </div>
       
       <br></br>
