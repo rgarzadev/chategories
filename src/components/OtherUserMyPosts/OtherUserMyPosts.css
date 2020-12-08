@@ -6,8 +6,8 @@
   .OtherUserMyPosts {
     border: 1px solid black;
     border-radius: 16px;
-      min-height: 325px;
+      min-height: 550px;
     margin-bottom: 60px;
-    background-color: rgb(158, 147, 147);
+    background-color: white;
   }
   
