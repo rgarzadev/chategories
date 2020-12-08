@@ -1,57 +1,51 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
+import { Modal } from 'react-bootstrap';
 import TextField from '@material-ui/core/TextField';
 import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import firebase from "../../firebase";
-import { Container } from '@material-ui/core';
-
 import 'firebase/auth';
 import './SetUserName';
 
+const auth = firebase.auth();
+const firestore = firebase.firestore();
+
 const useStyles = makeStyles((theme) => ({
-    root: {
-        '& .MuiTextField-root': {
-            margin: theme.spacing(1),
-            width: '25ch',
-        },
-        maxWidth: 345,
-    },
-    media: {
-        height: 140,
-    },
+    input: {
+        maxWidth: true
+    }
 }));
 
-export default function SetUserName() {
-    const auth = firebase.auth();
-    const firestore = firebase.firestore();
+const SetUserName = (props) => {
     const classes = useStyles();
-    const [value, setValue] = useState('');
-
     const { uid } = auth.currentUser;
+    const [value, setValue] = useState('');
+    const usersRef = firestore.collection('users');
 
-    const updateUserName = () => {
-        const userRef = firestore.collection('users').doc(uid)
-        userRef.update({
+    const updateUserName = async (e) => {
+        await usersRef.doc(uid).update({
             displayName: value
         })
+        setValue('');   
     }
 
     return (
-        <Container className='DisplayNameForm'>
-            <form className={classes.root} noValidate autoComplete="off">
-                <TextField
-                    required
-                    id="outlined-required"
-                    fullWidth="true"
-                    label="Display Name"
-                    variant="outlined"
-                    value={value}
-                    onChange={(e) => setValue(e.target.value)}
-                />
-                <Button size="small" color="primary" onClick={() => updateUserName()}>
-                    Change Display Name
-                </Button>
-            </form>
-        </Container>
-    )
+        <Modal
+            {...props}
+            size='lg'
+            aria-labelledby='contained-modal-title-vcenter'
+            centered
+        >
+            <Modal.Body>
+                <div className="Bio">
+                    <TextField className={classes.input} label="Update Display Name" variant="outlined" value={value} onChange={(e) => setValue(e.target.value)}/><br />
+                </div>
+                <div className="UpdateButton">
+                    <Button variant="contained" type="submit " color="primary" onClick={updateUserName}>Update</Button>
+                </div>
+            </Modal.Body>
+        </Modal>
+    );
 }
+
+export default SetUserName;

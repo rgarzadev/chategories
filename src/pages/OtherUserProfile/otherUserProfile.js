@@ -7,7 +7,7 @@ import OtherUserChategories from '../../components/OtherUserChategories/OtherUse
 import OtherUserNameCard from '../../components/OtherUserNameCard/OtherUserNameCard';
 import OtherUserAboutMe from '../../components/OtherUserAboutMe/OtherUserAboutMe';
 import OtherUserMyPosts from '../../components/OtherUserMyPosts/OtherUserMyPosts';
-import "./otherUserProfile.css";
+import "./OtherUserProfile.css";
 
 const firestore = firebase.firestore();
 
