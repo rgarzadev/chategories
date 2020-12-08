@@ -71,10 +71,15 @@ function Search() {
 
                         {<h6>New Chategories</h6>} <ColorSwitch checked={toggleState} onChange={() => setToggleState(!toggleState)} /> {<h6>Search Results</h6>}
 
-                        <div>{toggleState ? <div className="ContentArea"><Container className="SearchResults" maxWidth="sm"><div className="container">{chategories && chategories.map(chategory => <Chategory key={chategory.id} message={chategory} />)}
+                        <div>{toggleState ? <div className="ContentArea">
+                        <Container className="SearchResults" maxWidth="sm">
+                        <div className="container">{chategories && chategories.map(chategory =>
+                        <Chategory key={chategory.id} message={chategory} />)}
                         </div>
                         </Container>
-                        </div> : <NewestChategories />}</div>
+                        </div> :
+                        <NewestChategories />}
+                        </div>
 
                         <Button variant="contained" color="primary" onClick={() => setModalShow(true)}>Add a NEW Chategory</Button>
 
@@ -104,9 +109,7 @@ function Chategory(props) {
     return (<>
         <div className={classes.root}>
             {/* <Link to={'/topic/' + title}>{title}</Link> */}
-            <Button variant="outlined" color="primary" href={'/topic/' + title}>
-                { title }
-            </Button>
+            <Button variant="outlined" color="primary" href={'/topic/' + title}>{ title }</Button>
         </div>
     </>)
 }
