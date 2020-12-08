@@ -40,6 +40,7 @@ const SetBio = (props) => {
                 <div className="Bio">
                     <TextField className={classes.input} label="Update About Me" variant="outlined" value={value} onChange={(e) => setValue(e.target.value)}/><br/>
                 </div>
+                <br></br>
                 <div className="UpdateButton">
                     <Button variant="contained" type="submit " color="secondary" onClick={updateBio}>Update</Button>
                 </div>

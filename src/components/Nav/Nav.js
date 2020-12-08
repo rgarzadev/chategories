@@ -24,6 +24,7 @@ const useStyles = makeStyles((theme) => ({
 function Nav() {
     const classes = useStyles();
     let history = useHistory();
+    
     const navStyle = {
         color: 'white'
     };
