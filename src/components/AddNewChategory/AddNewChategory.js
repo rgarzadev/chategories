@@ -7,14 +7,11 @@ import { Link } from 'react-router-dom';
 const firestore = firebase.firestore();
 const auth = firebase.auth();
 const AddNewChategory = (props) => {
-    
     const { uid } = auth.currentUser;
     const topicsRef = firestore.collection('topics');
     const chategoriesRef = firestore.collection('chategories');
     const [formValue1, setFormValue1] = useState("");
     const [formvalue2, setFormValue2] = useState("");
-
-    
 
     const createChategory = async (e) => {
         await chategoriesRef.doc(formValue1).set({
