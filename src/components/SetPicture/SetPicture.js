@@ -49,7 +49,7 @@ export default function SetPicture() {
                             type="file"
                         />
                         <label htmlFor="contained-button-file">
-                            <Button variant="contained" color="primary" component="span">
+                            <Button variant="contained" color="secondary" component="span">
                                 Upload New Picture
                             </Button>
                         </label>

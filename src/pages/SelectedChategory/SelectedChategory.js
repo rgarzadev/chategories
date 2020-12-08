@@ -52,7 +52,7 @@ function SelectedChategory() {
                         <br/>
 
                         <div className="AddToMyChategories">
-                            <Button variant="contained" color="primary" onClick={() => onButtonClick()} >Add to MY Chategories</Button>
+                            <Button variant="contained" color="secondary" onClick={() => onButtonClick()} >Add to MY Chategories</Button>
                         </div>
 
                         <br/>
@@ -61,7 +61,7 @@ function SelectedChategory() {
 
                         <br/>
 
-                        <Button variant="contained" color="primary" onClick={() => setModalShow(true)}>Add a NEW Topic</Button>
+                        <Button variant="contained" color="secondary" onClick={() => setModalShow(true)}>Add a NEW Topic</Button>
 
                         <AddNewTopic show={modalShow} onHide={() => setModalShow(false)} />
 
