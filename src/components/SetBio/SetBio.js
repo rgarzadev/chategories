@@ -1,54 +1,51 @@
 import React, {useState} from 'react';
+import {Modal} from 'react-bootstrap';
 import TextField from '@material-ui/core/TextField';
-import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import firebase from "../../firebase";
-import { Container } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core';
 import './SetBio.css';
-
 import 'firebase/auth';
+
 const auth = firebase.auth();
 const firestore = firebase.firestore();
 
 const useStyles = makeStyles((theme) => ({
-    root: {
-        '& .MuiTextField-root': {
-            margin: theme.spacing(1),
-            width: '25ch',
-        },
-    },
-}));
+    input: {
+        maxWidth: true
+    }
+}))
 
-export default function SetBio() {
+const SetBio = (props) => {
     const classes = useStyles();
-
     const { uid } = auth.currentUser;
     const [value, setValue] = useState('');
+    const usersRef = firestore.collection('users');
 
-    const updateBio = () => {
-        const usersRef = firestore.collection('users').doc(uid)
-        usersRef.update({
+    const updateBio = async (e) => {
+        await usersRef.doc(uid).update({
             bio: value
         })
+        setValue('');
     }
 
     return (  
-        <Container className="BioForm">
-            <form className={classes.root} noValidate autoComplete="off"> 
-                <TextField
-                    id="outlined-multiline-static"
-                    fullWidth="true"
-                    label="About Me"
-                    multiline
-                    rows={4}
-                    value={value}
-                    variant="outlined"
-                    onChange={(e) => setValue(e.target.value)}
-                />
-                <br></br>
-                <Button size="small" color="primary" onClick={() => updateBio()}>Update About Me</Button>
-            </form> 
-        </Container>
-        
+        <Modal
+            {...props}
+            size='lg'
+            aria-labelledby='contained-modal-title-vcenter'
+            centered
+        >
+            <Modal.Body>
+                <div className="Bio">
+                    <TextField className={classes.input} label="Update About Me" variant="outlined" value={value} onChange={(e) => setValue(e.target.value)}/><br/>
+                </div>
+                <div className="UpdateButton">
+                    <Button variant="contained" type="submit " color="primary" onClick={updateBio}>Update</Button>
+                </div>
+            </Modal.Body>
+        </Modal>    
     );
 }
+
+export default SetBio;
