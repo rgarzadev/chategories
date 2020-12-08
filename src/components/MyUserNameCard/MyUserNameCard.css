@@ -8,18 +8,27 @@
 .ContentArea {
     padding-left: 3% !important;
     padding-right: 3% !important;
+    text-align: center !important;
+    align-items: center !important; 
 }
 
 .MyUserImage {
-    text-align: center;
-    align-items: center;
+    text-align: center !important;
+    align-items: center !important; 
+    padding-left: 1% !important;
+    padding-right: 1% !important;
+    max-height: 200px;
+    min-width: 200px;
+}
+
+.MyUserNamePlate {
+    text-align: center !important;
+    align-items: center !important;
     padding-left: 1% !important;
     padding-right: 1% !important;
 }
 
-.MyUserNamePlate {
-    text-align: left;
-    align-items: center;
-    padding-left: 1% !important;
-    padding-right: 1% !important;
+.center-container {
+    text-align: center !important;
+    align-items: center !important;
 }

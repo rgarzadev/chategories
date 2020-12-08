@@ -23,6 +23,7 @@ function MyUserNameCard() {
                   {/* <img className="col-4 MyUserImage" src={photoURL} alt="photoURL"></img> */}
                   <div className="col-8 MyUserNamePlate">
                     {users && users.map(user => <User key={user.id} message={user} />)}
+
                   </div>
               </div>
             </div>
@@ -34,9 +35,16 @@ function MyUserNameCard() {
 function User(props) {
   const {displayName, photoURL} = props.message;
   return(
-    <div>
-      <img className="col-4 MyUserImage" src={photoURL} alt="photoURL"></img>
-      <div>{displayName}</div>
+    <div className='container center-container'>
+
+      <div className='row photo'>
+        <img className="col MyUserImage" src={photoURL} alt="photoURL"></img>
+      </div>
+
+      <div className='row namePlate'>
+        <div className='col MyUserNamePlate'><h2>{displayName}</h2></div>
+      </div>
+
     </div>
     
   )
