@@ -42,7 +42,7 @@ function Nav() {
                         </div>
                         <div className="col-4 nav-grid align-self-center">
                             <Typography style={navStyle} align="center" variant="h4" className={classes.title}>
-                                C||G
+                                CG
                             </Typography>
                         </div>
                         <div className="col-4 nav-grid AlignRight">

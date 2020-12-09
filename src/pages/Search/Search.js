@@ -44,15 +44,15 @@ function Search() {
 
     console.log(chategories)
 
-    const CssTextField = withStyles({
-        root: {
-            '& .MuiOutlinedInput-root': {
-            '&.Mui-focused fieldset': {
-              borderColor: 'black',
-            },
-          },
-        },
-      })(TextField);
+    // const CssTextField = withStyles({
+    //     root: {
+    //         '& .MuiOutlinedInput-root': {
+    //         '&.Mui-focused fieldset': {
+    //           borderColor: 'black',
+    //         },
+    //       },
+    //     },
+    //   })(TextField);
 
     return (
 
@@ -64,7 +64,7 @@ function Search() {
 
                     <div className="col TextFieldPadding">
 
-                        <CssTextField fullWidth="true" label="Search" variant="outlined" onClick={() => onSearchFieldClick()} onChange={handleInputChange} /><br />
+                        <TextField fullWidth="true" label="Search" variant="outlined" onClick={() => onSearchFieldClick()} onChange={handleInputChange} /><br />
 
                     </div>
 

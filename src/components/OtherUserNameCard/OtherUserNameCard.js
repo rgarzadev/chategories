@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Container, IconButton, makeStyles } from '@material-ui/core';
-import ForumIcon from '@material-ui/icons/Forum';
+import SendIcon from '@material-ui/icons/Send';
 import firebase from "../../firebase";
 import { useParams } from 'react-router-dom'
 import { useCollectionData } from 'react-firebase-hooks/firestore'
@@ -75,7 +75,7 @@ function OtherUserNameCard() {
               <div className="ChatIcon">
               <Link to={'/chat/' + sorted}>
                 <IconButton color="inherit" className={classes.centerButton} onClick={addDM}>
-                    <ForumIcon fontSize="large" />
+                    <SendIcon fontSize="large" />
                   </IconButton>
                 </Link>
               </div>
