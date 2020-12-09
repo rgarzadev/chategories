@@ -1,70 +1,53 @@
-# Getting Started with Create React App
+# Chategories
+An open discussion chat app with forum posting and direct messaging functionality!
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Simple and secure sign in authorization using your google account.
 
-## Available Scripts
+<img width="1014" alt="signIn" src="https://user-images.githubusercontent.com/42220778/101593336-60278a80-39b5-11eb-82f7-a5ec7684223d.PNG">
+<br>
+<br>
 
-In the project directory, you can run:
+![cg-home](https://user-images.githubusercontent.com/42220778/101593455-89e0b180-39b5-11eb-98aa-fe9a1148b9cd.PNG)
 
-### `npm start`
+Chategories is a mobile first REACT application using Firebase and many other technologies.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+(⬇⬇  Technologies listed below  ⬇⬇)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## What is Chategories??
+Use the Chategories app with your friends or study groups to share information on topics of your choice! 
 
-### `npm test`
+The Chategories app was based around the idea of sharing knowledge/information on topics, and then building a community around each topic. If you're someone who enjoys chatting about JavaScript then search for a JavaScript forum and chat away with people of similar interests. Make new friends and share the knowledge.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+![cg-addnew (1)](https://user-images.githubusercontent.com/42220778/101593587-c7ddd580-39b5-11eb-87a1-523b91de784a.PNG)
 
-### `npm run build`
+Update your profile to let everyone know who you are and what you look like with a photo uploader and updatable bio section.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Head to the forum page, located in the center of the footer, to see what people are chatting about. From there you can either click on Chategory topics OR create your own topic! Once inside of a Chategory topic forum you can instant message with many users at once. If you find someones thought process to be particularily appealing, you can then go to their profile and send them a private direct message. 
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+![cg-chat](https://user-images.githubusercontent.com/42220778/101593646-e5ab3a80-39b5-11eb-9acd-94b28ea2c4b3.PNG)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+## TECH USED
+As stated above, Chategories is a mobile first REACT app that used many technologies such as...
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- Firebase
+- Bootstrap / REACT Bootstrap
+- Material UI
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+If you download or clone the repo make sure to do the initial `npm i` in the command line which will make sure all the dependencies are downloaded before starting the app with `npm run start`
+<br>
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+[Deployed app here!](https://chategories-57274.web.app/)
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+[GitHub Repo](https://github.com/nmckenzie1/chategories)
 
-## Learn More
+### Contact the DEVS
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+[ Neil McKenzie ](https://github.com/nmckenzie1)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+[ Ryan Garza ](https://github.com/rgarzadev)
 
-### Code Splitting
+[ Téa dfkestner ](https://github.com/dfkestner)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+[ David Anderson ](https://github.com/Davidanderson76)
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
