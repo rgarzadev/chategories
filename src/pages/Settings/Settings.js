@@ -22,7 +22,7 @@ function Settings() {
 
     return (
             <div className="TopBottomMargin">
-                <h5 className='SettingsProfile' > Edit My Profile </h5>
+                <h5 className='SettingsProfile' > ~ Edit My Profile ~ </h5>
                 <Container className='SettingsProfile'>
                     <MyUserNameCard />
 

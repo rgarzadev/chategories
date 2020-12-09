@@ -26,7 +26,7 @@ function ChategoryNameCard() {
         <Container className="ChategoryNameCard" maxWidth="sm">
             <div className="container">
               <div className="row">
-                  <div className="col text-center ChategoryNamePlate">{id}</div>
+                  <div className="col text-center ChategoryNamePlate"><h3>{id}</h3></div>
               </div>
             </div>
         </Container>
