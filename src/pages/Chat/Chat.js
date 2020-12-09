@@ -55,7 +55,7 @@ function Chat() {
       </Container>
 
 
-      {/* <span ref={dummy}></span> */}
+      <span ref={dummy}></span>
 
       <Container className="FormDiv" maxWidth="sm">
 
