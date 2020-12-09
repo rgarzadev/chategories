@@ -32,8 +32,12 @@ function OtherUserNameCard() {
  
   const usersRef = firestore.collection('users');
   const query = usersRef.where('uid', '==', uid).limit(1)
+  const query2 = usersRef.where('uid', '==', sender);
+  const [authUsers] = useCollectionData(query2, { idField: 'id' });
+  console.log(authUsers)
   const [users] = useCollectionData(query, { idField: 'id' });
   console.log(users)
+
   const dmsRef = firestore.collection('dms')
 
   const addDM = async(e) => {
@@ -41,7 +45,11 @@ function OtherUserNameCard() {
     
     await dmsRef.doc(sorted).set({
       users: [uid, sender],
-      title: sorted
+      title: sorted,
+      photo1: authUsers[0].photoURL,
+      photo2: users[0].photoURL,
+      displayName1: authUsers[0].displayName,
+      displayName2: users[0].displayName
     })
   }
 
