@@ -1,4 +1,6 @@
 import React, { useRef, useState } from 'react';
+import Container from '@material-ui/core/Container';
+
 import firebase from "../../firebase"
 import {useParams} from 'react-router-dom'
 import {Link} from "react-router-dom"
@@ -40,10 +42,18 @@ function Chat() {
       dummy.current.scrollIntoView({ behavior: 'smooth' });
     }
     return (<>
-      <main>
+
+      <div className="ContentArea">
+      <Container className="MyChategories" maxWidth="sm">
+        <div className="container">
+
         {messages && messages.map(msg => <ChatMessage key={msg.id} message={msg} />)}
-        <span ref={dummy}></span>
-      </main>
+        </div>
+      </Container>
+    </div>
+        
+        {/* <span ref={dummy}></span> */}
+
       <form onSubmit={sendMessage}>
         <input value={formValue} onChange={(e) => setFormValue(e.target.value)} placeholder="say something nice" />
         <button type="submit" disabled={!formValue}>🕊️</button>
@@ -56,8 +66,10 @@ function Chat() {
     const messageClass = uid === auth.currentUser.uid ? 'sent' : 'received';
     return (<>
       <div className={`message ${messageClass}`}>
-        <Link to={'/otherprof/' + uid}>{displayName}</Link>
-        <img className="chatImg" src={photoURL || 'https://api.adorable.io/avatars/23/abott@adorable.png'} />
+        <Link to={'/otherprof/' + uid}>
+          <img className="chatImg" src={photoURL || 'https://api.adorable.io/avatars/23/abott@adorable.png'} />
+        </Link>
+        
         <p>{text}</p>
       </div>
     </>)
