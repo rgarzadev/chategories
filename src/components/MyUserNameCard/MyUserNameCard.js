@@ -3,6 +3,9 @@ import firebase from "../../firebase"
 import 'firebase/auth';
 import { useCollectionData } from 'react-firebase-hooks/firestore';
 import Container from '@material-ui/core/Container';
+import {Link} from 'react-router-dom';
+import ForumIcon from '@material-ui/icons/Forum';
+import IconButton from '@material-ui/core/IconButton';
 import "./MyUserNameCard.css";
 const auth = firebase.auth();
 const firestore = firebase.firestore();
@@ -26,15 +29,22 @@ function MyUserNameCard() {
 
                   </div>
               </div>
+
+              {/* <Link to={'/mychats'}>
+                <IconButton color="inherit">
+                  <ForumIcon fontSize="large" />
+                </IconButton>
+              </Link> */}
+
             </div>
-        </Container>
-        </div>
-    )
+      </Container>
+    </div>
+  )
 }
 
 function User(props) {
-  const {displayName, photoURL} = props.message;
-  return(
+  const { displayName, photoURL } = props.message;
+  return (
 
     <div className='container center-container'>
       <br></br>
@@ -50,10 +60,10 @@ function User(props) {
       <div className='row namePlate'>
         <div className='col MyUserNamePlate'><h2>{displayName}</h2></div>
       </div>
-      
+
       <br></br>
     </div>
-    
+
   )
 }
 

@@ -6,6 +6,7 @@ import firebase from "../../firebase";
 import { useParams } from 'react-router-dom'
 import { useCollectionData } from 'react-firebase-hooks/firestore'
 import "./OtherUserNameCard.css";
+const auth = firebase.auth();
 const firestore = firebase.firestore();
 
 const useStyles = makeStyles((theme) => ({
@@ -25,10 +26,34 @@ function OtherUserNameCard() {
   };
 
   let { uid } = useParams();
-
+  const sender = auth.currentUser.uid
+  const chatters = [uid, sender]
+  const sorted = chatters.sort().toString()
+  console.log(sorted)
+ 
   const usersRef = firestore.collection('users');
   const query = usersRef.where('uid', '==', uid).limit(1)
+  const query2 = usersRef.where('uid', '==', sender);
+  const [authUsers] = useCollectionData(query2, { idField: 'id' });
+  console.log(authUsers)
   const [users] = useCollectionData(query, { idField: 'id' });
+  console.log(users)
+
+  const dmsRef = firestore.collection('dms')
+
+  const addDM = async(e) => {
+    console.log("creatingdm");
+    
+    await dmsRef.doc(sorted).set({
+      users: [uid, sender],
+      title: sorted,
+      photo1: authUsers[0].photoURL,
+      photo2: users[0].photoURL,
+      displayName1: authUsers[0].displayName,
+      displayName2: users[0].displayName
+    })
+  }
+
 
   return (
     <div className="ContentArea">
@@ -48,8 +73,8 @@ function OtherUserNameCard() {
           <div className="row">
             <div className="col">
               <div className="ChatIcon">
-                <Link to='/mychats'>
-                  <IconButton color="secondary" className={classes.centerButton}>
+              <Link to={'/chat/' + sorted}>
+                <IconButton color="inherit" className={classes.centerButton} onClick={addDM}>
                     <ForumIcon fontSize="large" />
                   </IconButton>
                 </Link>
@@ -58,7 +83,7 @@ function OtherUserNameCard() {
           </div>
         </div>
       </Container>
-    </div >
+    </div>
   )
 }
 
