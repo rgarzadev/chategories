@@ -43,21 +43,21 @@ function MyChatsDiv() {
 }
 
 function DM(props) {
-  const uid = auth.currentUser.uid;
-  const usersRef = firestore.collection('users');
-  const query = usersRef.where('uid', '==', uid);
-  const users = useCollectionData(query, { idField: 'id'});
-  let userName;
-  if (users.displayName !== props.displayName1) {
-    userName = props.displayName2
-  } else {
-    userName = props.displayName1
-  }
+  // const uid = auth.currentUser.uid;
+  // const usersRef = firestore.collection('users');
+  // const query = usersRef.where('uid', '==', uid);
+  // const users = useCollectionData(query, { idField: 'id'});
+  // let userName;
+  // if (users.displayName !== props.displayName1) {
+  //   userName = props.displayName2
+  // } else {
+  //   userName = props.displayName1
+  // }
   
   return (
     <div>
       {/* <Link to={'/chat/' + id}>{title}</Link> */}
-      <Button variant="outlined" color="secondary" href={'/chat/' + props.id}>{userName}</Button>
+      <Button variant="outlined" color="secondary" href={'/chat/' + props.id}>{props.displayName1 + " & " + props.displayName2}</Button>
     </div>
   )
 }
