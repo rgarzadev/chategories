@@ -2,4 +2,10 @@
   text-align: center;
 }
 
+a.MuiButton-root:hover {
+  color: black;
+}
 
+img {
+  max-height: 150px;
+}

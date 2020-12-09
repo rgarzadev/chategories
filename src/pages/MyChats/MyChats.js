@@ -5,7 +5,7 @@ function MyChats() {
 
     return (
 
-        <div>
+        <div className="TopBottomMargin">
 
             <div className="container MuiContainer-maxWidthSm">
                 <h5 className="PageTitle">My DMs:</h5>

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Container, IconButton, makeStyles } from '@material-ui/core';
-import ForumIcon from '@material-ui/icons/Forum';
+import SendIcon from '@material-ui/icons/Send';
 import firebase from "../../firebase";
 import { useParams } from 'react-router-dom'
 import { useCollectionData } from 'react-firebase-hooks/firestore'
@@ -20,6 +20,7 @@ const useStyles = makeStyles((theme) => ({
 
 function OtherUserNameCard() {
   const classes = useStyles();
+
   const navStyle = {
     color: 'white'
   };
@@ -53,18 +54,31 @@ function OtherUserNameCard() {
     })
   }
 
+
   return (
     <div className="ContentArea">
+
       <Container className="OtherUserNameCard" maxWidth="sm">
+
         <div className="container">
+
           <div className="row">
-            <div className="col-3 OtherUserImage">{users && users.map(user => <OtherUser key={user.id} message={user} />)}</div>
-            <div className="col-3 ChatIcon">
+            <div className="col">
+              <div className="OtherUserImage">
+                {users && users.map(user => <OtherUser key={user.id} message={user} />)}
+              </div>
+            </div>
+          </div>
+
+          <div className="row">
+            <div className="col">
+              <div className="ChatIcon">
               <Link to={'/chat/' + sorted}>
                 <IconButton color="inherit" className={classes.centerButton} onClick={addDM}>
-                  <ForumIcon fontSize="large" />
-                </IconButton>
-              </Link>
+                    <SendIcon fontSize="large" />
+                  </IconButton>
+                </Link>
+              </div>
             </div>
           </div>
         </div>
@@ -80,7 +94,7 @@ function OtherUser(props) {
   return (
     <>
       <img src={photoURL}></img>
-      <div className="col-6 OtherUserNamePlate">{displayName}</div>
+      <div className="col OtherUserNamePlate"><h2>{displayName}</h2></div>
     </>
   )
 }

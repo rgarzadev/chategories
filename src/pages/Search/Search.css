@@ -15,3 +15,7 @@ h6 {
 .MuiButton-containedPrimary {
     background-color: black;
 }
+
+.MuiInputBase-input:focus {
+    border-color: black;
+}

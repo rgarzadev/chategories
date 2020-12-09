@@ -44,6 +44,16 @@ function Search() {
 
     console.log(chategories)
 
+    // const CssTextField = withStyles({
+    //     root: {
+    //         '& .MuiOutlinedInput-root': {
+    //         '&.Mui-focused fieldset': {
+    //           borderColor: 'black',
+    //         },
+    //       },
+    //     },
+    //   })(TextField);
+
     return (
 
         <div className="TopBottomMargin">
