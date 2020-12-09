@@ -5,7 +5,8 @@
 
 .MyChatsDiv {
     border: solid black;
+    border-radius: 16px;
     min-height: 650px;
-    margin-bottom: 70px;
-    background-color: purple;
+    margin-bottom: 6px;
+    background-color:white;
 }

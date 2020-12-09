@@ -9,12 +9,21 @@
     padding-right: 3% !important;
 }
 
-.OtherUserImage {
+/* .OtherUserImage {
     text-align: center;
     align-items: center;
     padding-left: 1% !important;
     padding-right: 1% !important;
-  }
+  } */
+
+  .OtherUserProfileImage {
+    text-align: center !important;
+    align-items: center !important; 
+    padding-left: 1% !important;
+    padding-right: 1% !important;
+    max-height: 200px !important;
+    min-width: 200px !important;
+}
 
   .OtherUserNamePlate {
     text-align: center;

@@ -21,18 +21,20 @@ function Settings() {
     const [modalShow, setModalShow] = React.useState(false);
 
     return (
-            <div>
+            <div className="TopBottomMargin">
                 <h5 className='SettingsProfile' > Edit My Profile </h5>
                 <Container className='SettingsProfile'>
                     <MyUserNameCard />
 
                     {/* <Button onClick={() => setShow(true)}>Edit Display Name/Picture</Button> */}
+                    <br/>
                     <Button variant="outlined" color="secondary" onClick={() => setShow(true)}>Edit Display Name/Picture</Button>
 
                     <SetUserName show={modal} onHide={() => setShow(false)} />
                     <div className="ContentArea">
                         <div className="ContentArea">
-
+                            
+                            <br/>
                             <h5>About Me:</h5>
 
                             <Container className="bioContainer" maxWidth="sm">
@@ -42,12 +44,16 @@ function Settings() {
                             </Container>
 
                             {/* <Button onClick={() => setModalShow(true)}>Edit About Me</Button> */}
+
+                            <br/>
                             <Button variant="outlined" color="secondary" onClick={() => setModalShow(true)}>Edit About Me</Button>
 
                             <SetBio show={modalShow} onHide={() => setModalShow(false)} />
                         </div>
                         
                     </div>
+
+                    <br/>
                     <h5>My Chategories</h5>
                     <MyChategories />
                 </Container>
