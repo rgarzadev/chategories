@@ -3,10 +3,13 @@ import firebase from "../../firebase"
 import 'firebase/auth';
 import { useCollectionData } from 'react-firebase-hooks/firestore';
 import Container from '@material-ui/core/Container';
-import {Link} from 'react-router-dom';
-import ForumIcon from '@material-ui/icons/Forum';
+import { Link } from 'react-router-dom';
+import SendIcon from '@material-ui/icons/Send';
 import IconButton from '@material-ui/core/IconButton';
+
 import "./MyUserNameCard.css";
+
+
 const auth = firebase.auth();
 const firestore = firebase.firestore();
 
@@ -24,17 +27,11 @@ function MyUserNameCard() {
         <div className="container">
           <div className="row">
             {/* <img className="col-4 MyUserImage" src={photoURL} alt="photoURL"></img> */}
-            <div className="col-8 MyUserNamePlate">
+            <div className="col MyUserNamePlate">
               {users && users.map(user => <User key={user.id} message={user} />)}
             </div>
-            <div className="col-3 ChatIcon">
-              <Link to={'/mychats'}>
-                <IconButton color="inherit">
-                  <ForumIcon fontSize="large" />
-                </IconButton>
-              </Link>
-            </div>
           </div>
+
         </div>
       </Container>
     </div>
@@ -49,14 +46,28 @@ function User(props) {
       <br></br>
 
       <div className='row photo'>
-        <img className="col-12 MyUserImage" src={photoURL} alt="photoURL"></img>
+        <div className="col">
+          <img className="MyUserImage" src={photoURL} alt="photoURL"></img>
+        </div>
       </div>
 
       <hr></hr>
 
       <div className='row namePlate'>
-        <div className='col-12 MyUserNamePlate'><h2>{displayName}</h2></div>
+        <div className='col MyUserNamePlate'><h2>{displayName}</h2></div>
       </div>
+
+      <div className='row namePlate'>
+        <Link to={'/mychats'}>
+          <IconButton color="inherit">
+            <SendIcon fontSize="large" />
+          </IconButton>
+        </Link>
+      </div>
+
+
+
+
 
       <br></br>
     </div>

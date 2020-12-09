@@ -33,7 +33,7 @@ function Nav() {
             <Toolbar>
                 <div className="container">
                     <div className="row">
-                        <div className="col-4 nav-grid align-self-center">
+                        <div className="col-4 nav-grid AlignLeft">
                             <Link style={navStyle} to="/">
                                 <IconButton edge="start" color="inherit" aria-label="menu">
                                     <ArrowBackIcon onClick={() => history.goBack()} fontSize="large" />
@@ -42,7 +42,7 @@ function Nav() {
                         </div>
                         <div className="col-4 nav-grid align-self-center">
                             <Typography style={navStyle} align="center" variant="h4" className={classes.title}>
-                                C||G
+                                CG
                             </Typography>
                         </div>
                         <div className="col-4 nav-grid AlignRight">

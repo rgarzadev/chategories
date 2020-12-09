@@ -6,6 +6,9 @@ import 'firebase/auth';
 import { useCollectionData } from 'react-firebase-hooks/firestore';
 import "./MyPosts.css";
 import {Link} from 'react-router-dom';
+import green from "@material-ui/core/colors/green";
+
+
 const auth = firebase.auth();
 const firestore = firebase.firestore();
 
@@ -17,6 +20,9 @@ const useStyles = makeStyles((theme) => ({
     title: {
       flexGrow: 1,
     },
+    postsStyle: {
+      color: green[500]
+    }
   }));
 
 function MyPosts() {
@@ -41,12 +47,12 @@ function MyPosts() {
     )
 }
 function Topics(props) {
- 
+  const classes = useStyles();
   const { title, id } = props.message;
 return (<>
     <div>
     {/* <Link to={'/chat/' + id}>{title}</Link> */}
-    <Button variant="outlined" color="secondary" href={'/chat/' + id}>{title}</Button>
+    <Button variant="outlined" className={classes.postsStyle} href={'/chat/' + id}>{title}</Button>
 
    </div>
   </>)
