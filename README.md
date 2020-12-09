@@ -47,7 +47,7 @@ If you download or clone the repo make sure to do the initial `npm i` in the com
 
 [ Ryan Garza ](https://github.com/rgarzadev)
 
-[ Téa dfkestner ](https://github.com/dfkestner)
+[ Téa Flores-Kestner ](https://github.com/dfkestner)
 
 [ David Anderson ](https://github.com/Davidanderson76)
 
