@@ -41,6 +41,8 @@ If you download or clone the repo make sure to do the initial `npm i` in the com
 
 [GitHub Repo](https://github.com/nmckenzie1/chategories)
 
+[Google Slides Demo](https://docs.google.com/presentation/d/1wNUV30HrRIIYGCYRwNGDlPusnvev3IZx76o1MBPM1Ag/edit#slide=id.g25f6af9dd6_0_0)
+
 ### Contact the DEVS
 
 [ Neil McKenzie ](https://github.com/nmckenzie1)
