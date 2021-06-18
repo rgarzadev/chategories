@@ -28,6 +28,7 @@ Head to the forum page, located in the center of the footer, to see what people 
 ![cg-chat](https://user-images.githubusercontent.com/42220778/101593646-e5ab3a80-39b5-11eb-9acd-94b28ea2c4b3.PNG)
 
 <img src="./public/cg-wireframe-previz.png"/>
+
 ## TECH USED
 As stated above, Chategories is a mobile first REACT app that used many technologies such as...
 
